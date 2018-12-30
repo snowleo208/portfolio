@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import '../../css/main.sass';
 
 import Home from './Home';
 import About from './About';
-import Header from './Header';
+import ProjectDetails from './ProjectDetails';
+import Footer from './Footer';
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <React.Fragment>
-          <Header />
-
+      <React.Fragment>
+        <Router>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/about/" exact component={About} />
+            <Route path="/about" exact component={About} />
+            <Route path="/project/:url" component={ProjectDetails} />
           </Switch>
-        </React.Fragment>
-      </Router>
+        </Router>
+        <Footer />
+      </React.Fragment>
     );
   }
 }

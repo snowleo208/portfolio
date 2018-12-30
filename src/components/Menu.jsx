@@ -1,10 +1,21 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 class Menu extends Component {
+  static propTypes = {
+    location: PropTypes.object.isRequired,
+  };
   render() {
     return (
-      <nav className="c-menu-wrapper">
+      <nav
+        className={
+          this.props.location.pathname.indexOf('project') >= 0
+            ? 'c-menu-wrapper no-banner'
+            : 'c-menu-wrapper'
+        }
+      >
         <svg
           className="c-menu-icon"
           aria-labelledby="title"
@@ -29,4 +40,4 @@ class Menu extends Component {
   }
 }
 
-export default Menu;
+export default withRouter(Menu);

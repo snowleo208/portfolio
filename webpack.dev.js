@@ -19,6 +19,9 @@ module.exports = merge(common, {
     headers: {
       'Access-Control-Allow-Origin': '*'
     },
+    historyApiFallback: {
+      index: 'index.html'
+    },
     https: false,
     disableHostCheck: true,
     open: 'http://localhost:8080/'

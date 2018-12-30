@@ -17,7 +17,13 @@ class Header extends Component {
     const { location } = this.props;
     const translate = json.default;
     return (
-      <section className="c-header">
+      <section
+        className={
+          location.pathname !== '/about/'
+            ? 'c-header'
+            : 'c-header c-header__about'
+        }
+      >
         <Menu />
 
         <div className="c-header-banner">

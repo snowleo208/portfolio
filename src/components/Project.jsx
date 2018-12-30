@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import * as json from './portfolio.json';
 
 class Project extends Component {
@@ -18,10 +19,12 @@ class Project extends Component {
                 backgroundImage: `url(assets/projects/${item.urlKey}.jpg)`,
               }}
             >
-              <div className="c-project-item__overlay">
-                <h2>{item.name}</h2>
-                <p>{item.category}</p>
-              </div>
+              <Link to={`./project/${item.urlKey}`}>
+                <div className="c-project-item__overlay">
+                  <h2>{item.name}</h2>
+                  <p>{item.category}</p>
+                </div>
+              </Link>
             </div>
           ))}
         </section>

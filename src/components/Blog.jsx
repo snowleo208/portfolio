@@ -47,7 +47,7 @@ class Blog extends Component {
       <section className="c-post u-section-padding u-section-margin">
         <h1 className="c-post-title u-section-header">{translate.blogTitle}</h1>
         <div className="c-post-grid">
-          {this.state.post.length > 0
+          {this.state.post !== null
             ? this.state.post.map(post => (
                 <div className="c-post-item" key={post.id}>
                   <a href={post.link} target="_blank" rel="noopener noreferrer">
