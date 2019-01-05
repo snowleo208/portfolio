@@ -9,7 +9,7 @@
     "blogTitle": "Blog Post",
     "projects": [{
             "id": 0,
-            "category": "business",
+            "category": "commercial",
             "urlKey": "ryugaku-miryoku",
             "name": "Learning with EF Japan",
             "link": "https://www.efjapan.co.jp/hub/asia/ryugaku-miryoku/",
@@ -20,7 +20,7 @@
         },
         {
             "id": 1,
-            "category": "business",
+            "category": "commercial",
             "urlKey": "we-love-languages",
             "name": "We Love Languages",
             "link": "https://www.ef.com.hk/hub/asia/we-love-languages/",
@@ -31,7 +31,7 @@
         },
         {
             "id": 2,
-            "category": "business",
+            "category": "commercial",
             "urlKey": "accent-quiz",
             "name": "Accent Quiz",
             "link": "https://liuxue.ef.com.cn/hub/asia/accent-quiz",
@@ -42,7 +42,7 @@
         },
         {
             "id": 3,
-            "category": "business",
+            "category": "commercial",
             "urlKey": "hot-deals",
             "name": "EF Hot Deals",
             "link": "http://www.ef.com.hk/hub/asia/hot-deals",
@@ -54,7 +54,7 @@
         {
             "id": 4,
             "urlKey": "dbs",
-            "category": "business",
+            "category": "commercial",
             "name": "DBS Website Revamp",
             "link": "https://www.dbs.com.hk/personal/",
             "desc": "This is a campaign page developed for EF Asia, for boosting awareness and sales of EF Asia offices, included EF Japan, Hong Kong, Indonesia, South Korea, Thailand, Vietnam. User need to play and match six pairs of card and the end, they can get discounts of EF's courses.",

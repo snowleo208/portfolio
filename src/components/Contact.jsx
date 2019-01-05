@@ -2,10 +2,25 @@ import React, { Component } from 'react';
 // import * as json from './portfolio.json';
 
 class Contact extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      email: '',
+      message: '',
+    };
+  }
   render() {
     // const translate = json.default;
     return (
       <section className="c-contact u-section-padding">
+        <div className="c-contact-details">
+          <h1>Contact Info:</h1>
+          <p>
+            Need a project? Feel free to contact me and let me know what you
+            need. Everything would be tailor-made and suit for your needs.
+          </p>
+        </div>
         <form className="c-form" id="form" action="" method="POST">
           <label htmlFor="email">
             <span className="c-form-label">
@@ -50,7 +65,8 @@ class Contact extends Component {
               required="required"
             />
             <span className="c-form-input__length">
-              <span id="form-message-length">0</span>/400
+              <span id="form-message-length">0</span>
+              /400
             </span>
             <span className="u-alert" id="form-message-error">
               Please enter at least 10 characters and less than 400 characters.
