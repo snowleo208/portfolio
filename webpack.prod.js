@@ -1,10 +1,12 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
+const path = require("path");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+const HtmlWebpackHarddiskPlugin = require("html-webpack-harddisk-plugin");
 
 module.exports = merge(common, {
   mode: 'production',
@@ -12,6 +14,7 @@ module.exports = merge(common, {
   output: {
     filename: "[name].[contenthash:5].js",
     chunkFilename: "[name].[contenthash:5].js",
+    publicPath: "./",
   },
   optimization: {
     minimizer: [
@@ -20,7 +23,7 @@ module.exports = merge(common, {
         terserOptions: {
           ecma: 6,
         }
-      }),    
+      }),
       new OptimizeCSSAssetsPlugin({})
     ]
   },
@@ -60,6 +63,9 @@ module.exports = merge(common, {
       verbose: true,
       dry: false
       // exclude: ['shared.js']
+    }),
+    new HtmlWebpackHarddiskPlugin({
+      outputPath: path.resolve(__dirname, "./dist/")
     }),
   ]
 });
