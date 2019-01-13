@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
+// import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { TransitionGroup } from 'react-transition-group';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import '../../css/main.sass';
 
@@ -18,18 +19,18 @@ class App extends Component {
             <div>
               <div>
                 <TransitionGroup>
-                  <CSSTransition
+                  {/* <CSSTransition
                     key={location.key}
                     classNames="transit"
                     timeout={300}
-                  >
-                    <Switch location={location}>
-                      <Route path="/" exact component={Home} />
-                      <Route path="/about" exact component={About} />
-                      <Route path="/project/:url" component={ProjectDetails} />
-                      <Route render={() => <h1>404 Not Found</h1>} />
-                    </Switch>
-                  </CSSTransition>
+                  > */}
+                  <Switch location={location}>
+                    <Route path="/" exact component={Home} />
+                    <Route path="/about" exact component={About} />
+                    <Route path="/project/:url" component={ProjectDetails} />
+                    <Route render={() => <h1>404 Not Found</h1>} />
+                  </Switch>
+                  {/* </CSSTransition> */}
                 </TransitionGroup>
                 <Footer />
               </div>

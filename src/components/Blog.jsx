@@ -43,36 +43,37 @@ class Blog extends Component {
 
   render() {
     const translate = json.default;
-    return (
-      <section className="c-post u-section-padding u-section-margin">
-        <h1 className="c-post-title u-section-header">{translate.blogTitle}</h1>
-        <div className="c-post-grid">
-          {this.state.post !== null
-            ? this.state.post.map(post => (
-                <div className="c-post-item" key={post.id}>
+
+    if (this.state.post !== []) {
+      return (
+        <section className="c-post u-section-padding">
+          <h1 className="c-post-title u-section-header">
+            {translate.blogTitle}
+          </h1>
+          <div className="c-post-grid">
+            {this.state.post.map(post => (
+              <div className="c-post-item" key={post.id}>
+                <a href={post.link} target="_blank" rel="noopener noreferrer">
+                  <img
+                    className="c-post-img"
+                    src="assets/dev_to_logo.jpg"
+                    alt="Dev.to"
+                  />
+                </a>
+                <div className="c-post-text">
                   <a href={post.link} target="_blank" rel="noopener noreferrer">
-                    <img
-                      className="c-post-img"
-                      src="assets/dev_to_logo.jpg"
-                      alt="Dev.to"
-                    />
+                    <h3>{post.title}</h3>
                   </a>
-                  <div className="c-post-text">
-                    <a
-                      href={post.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <h3>{post.title}</h3>
-                    </a>
-                    <date>{post.date.slice(0, 16)}</date>
-                  </div>
+                  <p className="date">{post.date.slice(0, 16)}</p>
                 </div>
-              ))
-            : ''}
-        </div>
-      </section>
-    );
+              </div>
+            ))}
+          </div>
+        </section>
+      );
+    } else {
+      return '';
+    }
   }
 }
 
