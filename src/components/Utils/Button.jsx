@@ -1,6 +1,18 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
+const onClick = (props, history) => {
+  if (props.target.indexOf('http') >= 0) {
+    const newWindow = window.open();
+    newWindow.opener = null;
+    newWindow.referrer = null;
+    newWindow.location = props.target;
+    newWindow.location.href = props.target;
+  } else {
+    return history.push(props.target);
+  }
+};
+
 const Button = props => {
   return (
     <Route
@@ -8,11 +20,9 @@ const Button = props => {
         <button
           {...props}
           className={'u-btn ' + props.className}
-          onClick={() => {
-            history.push(props.target);
-          }}
+          onClick={() => onClick(props, history)}
         >
-          {props.value}
+          <span>{props.value}</span>
         </button>
       )}
     />

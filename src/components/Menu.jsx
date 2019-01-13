@@ -49,6 +49,10 @@ class Menu extends Component {
     window.addEventListener('resize', debounce(this.resize, 100));
   }
 
+  // componentWillUnmount() {
+  //   window.removeEventListener('resize', debounce(this.resize, 100));
+  // }
+
   render() {
     return (
       <nav

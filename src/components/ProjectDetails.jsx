@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import * as json from './portfolio.json';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
+import * as json from './portfolio.json';
 import Menu from './Menu';
+import Button from './Utils/Button';
 import { withRouter } from 'react-router';
 
 class ProjectDetails extends Component {
@@ -18,10 +21,21 @@ class ProjectDetails extends Component {
     return (
       <React.Fragment>
         <Menu />
+        <section
+          className="c-details-bg"
+          style={{
+            backgroundImage: `url(../assets/projects/bg/${
+              project[0].urlKey
+            }.jpg)`,
+          }}
+        />
         <section className="c-details">
           {project && project.length === 1
             ? project.map(ele => (
-                <section className="c-details-item" key={ele.urlKey}>
+                <section
+                  className="c-details-item u-section-padding"
+                  key={ele.urlKey}
+                >
                   <div className="c-details-intro">
                     <h1>{ele.name}</h1>
                     <p className="c-details-desc">{ele.desc}</p>
@@ -35,18 +49,6 @@ class ProjectDetails extends Component {
                         <td>{ele.client}</td>
                       </tr>
                       <tr>
-                        <td>Live Site: </td>
-                        <td>
-                          <a
-                            href={ele.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            View here
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
                         <td>Date: </td>
                         <td>{ele.date}</td>
                       </tr>
@@ -56,9 +58,20 @@ class ProjectDetails extends Component {
                       </tr>
                     </tbody>
                   </table>
+
+                  <Button
+                    className="u-btn project-btn"
+                    target={ele.link}
+                    value="Live Site"
+                  />
                 </section>
               ))
             : 'No project'}
+        </section>
+        <section className="c-details-menu">
+          <Link to="/">
+            <p>Back to Top</p>
+          </Link>
         </section>
       </React.Fragment>
     );
