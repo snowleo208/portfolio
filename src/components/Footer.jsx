@@ -21,7 +21,7 @@ class Footer extends Component {
                 preserveAspectRatio="xMidYMid meet"
               >
                 <title>{item.id}</title>
-                <use href={`assets/icon-sprite.svg#${item.id}`} />
+                <use href={`/assets/icon-sprite.svg#${item.id}`} />
               </svg>
             </a>
           ))}

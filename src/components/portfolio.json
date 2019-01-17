@@ -24,7 +24,8 @@
             "desc": "This is a landing page developed for EF Japan, for introducing the benefits of studying with EF Japan.",
             "techDesc": "The main technologies are HTML, CSS, Javascript and the slider used slick.",
             "client": "Education First Japan",
-            "date": "Augest, 2018"
+            "date": "Augest, 2018",
+            "gallery": ["ryugaku-miryoku_1.jpg", "ryugaku-miryoku_2.jpg"]
         },
         {
             "id": 1,
@@ -35,7 +36,8 @@
             "desc": "This is a campaign page developed for EF Asia, for boosting awareness and sales of EF Asia offices, included EF Japan, Hong Kong, Indonesia, South Korea, Thailand, Vietnam. User need to play and match six pairs of card and the end, they can get discounts of EF's courses.",
             "techDesc": "The main technologies are React, SASS/CSS and webpack.",
             "client": "Education First Japan",
-            "date": "November, 2018"
+            "date": "November, 2018",
+            "gallery": ["we-love-languages_1.jpg", "we-love-languages_2.jpg", "we-love-languages_3.jpg", "we-love-languages_4.jpg"]
         },
         {
             "id": 2,
@@ -46,7 +48,8 @@
             "desc": "This is a campaign page developed for EF China, for boosting leads and awareness of EF China. Through this quiz, user can hear and answer questions of different accents, At the end, they can know their scores.",
             "techDesc": "The main technologies are React, SASS/CSS, with WeChat SDK for customizing share content.",
             "client": "Education First China",
-            "date": "October, 2018"
+            "date": "October, 2018",
+            "gallery": ["accent-quiz_1.jpg", "accent-quiz_2.jpg", "accent-quiz_3.jpg", "accent-quiz_4.jpg"]
         },
         {
             "id": 3,
@@ -57,7 +60,8 @@
             "desc": "This is a promotion page developed for EF Asia, for boosting sales of EF Asia offices, included EF Japan, Hong Kong, Indonesia, South Korea, Thailand, Vietnam. Staff can switch to different theme, e.g. Christmas to show different design.",
             "techDesc": "The main technologies are HTML/Pug, SASS/CSS and Javascript.",
             "client": "Education First Japan",
-            "date": "December, 2018"
+            "date": "December, 2018",
+            "gallery": ["hot-deals_1.jpg", "hot-deals_2.jpg"]
         },
         {
             "id": 4,
@@ -68,7 +72,8 @@
             "desc": "This is a campaign page developed for EF Asia, for boosting awareness and sales of EF Asia offices, included EF Japan, Hong Kong, Indonesia, South Korea, Thailand, Vietnam. User need to play and match six pairs of card and the end, they can get discounts of EF's courses.",
             "techDesc": "The main technologies are React, SASS/CSS.",
             "client": "Education First Japan",
-            "date": "March, 2017"
+            "date": "March, 2017",
+            "gallery": ["dbs_1.jpg", "dbs_2.jpg"]
         },
         {
             "id": 5,
@@ -79,7 +84,8 @@
             "desc": "Side project. This app can view current local weather and powered by React.js and DarkSky API. Open it and view your local weather at a glance! You can also change temperature from °F to °C degrees using the switch on top right.",
             "techDesc": "The main technologies are React, SASS/CSS.",
             "client": "Nil",
-            "date": "May, 2018"
+            "date": "May, 2018",
+            "gallery": ["hava-weather-app_1.jpg", "hava-weather-app_2.jpg"]
         }
     ],
     "footer": [{

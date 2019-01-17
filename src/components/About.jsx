@@ -32,7 +32,7 @@ class About extends Component {
           preserveAspectRatio="xMidYMid meet"
         >
           <title>{item.id}</title>
-          <use href={`../assets/icon-sprite.svg#${item.id}`} />
+          <use href={`/assets/icon-sprite.svg#${item.id}`} />
         </svg>
       </a>
     ));
@@ -68,7 +68,7 @@ class About extends Component {
           </div>
 
           <div className="c-about-img">
-            <img src="../assets/about_01_m.jpg" alt="" />
+            <img src="/assets/about_01_m.jpg" alt="" />
           </div>
         </section>
       </React.Fragment>

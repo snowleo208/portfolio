@@ -39,7 +39,7 @@ class Project extends Component {
         <div
           className="c-project-item"
           style={{
-            backgroundImage: `url(assets/projects/${item.urlKey}.jpg)`,
+            backgroundImage: `url(/assets/projects/${item.urlKey}.jpg)`,
           }}
         >
           <Link to={`./project/${item.urlKey}`}>

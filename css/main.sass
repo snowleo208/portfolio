@@ -392,6 +392,28 @@ a:visited
     td:nth-child(2n-1)
         font-weight: bold
 
+.c-details-gallery
+    display: flex
+    width: 100%
+    flex-direction: column
+    justify-content: center
+    flex-wrap: wrap
+    @media #{$laptop}
+        width: 100%
+        flex-direction: row
+        justify-content: center
+        flex-wrap: wrap
+
+    &__item
+        width: 100%
+        margin: 1em 0 0 0
+        @media #{$laptop}
+            width: calc(50% - 6em)
+            margin: 0 0 2em 2em
+        img
+            width: 100%
+
+
 .c-details-category
     text-transform: capitalize
 

@@ -24,7 +24,7 @@ class ProjectDetails extends Component {
         <section
           className="c-details-bg"
           style={{
-            backgroundImage: `url(../assets/projects/bg/${
+            backgroundImage: `url(/assets/projects/bg/${
               project[0].urlKey
             }.jpg)`,
           }}
@@ -60,10 +60,23 @@ class ProjectDetails extends Component {
                   </table>
 
                   <Button
-                    className="u-btn project-btn"
+                    className="u-btn project-btn u-section-margin"
                     target={ele.link}
                     value="Live Site"
                   />
+
+                  <section className="c-details-gallery">
+                    {ele.gallery
+                      ? ele.gallery.map(item => (
+                          <div className="c-details-gallery__item" key={item}>
+                            <img
+                              src={`/assets/projects/gallery/${item}`}
+                              alt=""
+                            />
+                          </div>
+                        ))
+                      : ''}
+                  </section>
                 </section>
               ))
             : 'No project'}
