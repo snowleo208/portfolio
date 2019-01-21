@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Menu from './Menu';
-import * as json from './portfolio.json';
-import Button from './Utils/Button';
+import Menu from '../Menu';
+import * as json from '../portfolio.json';
+import Button from '../Utils/Button';
 
 class About extends Component {
   createList = list => {

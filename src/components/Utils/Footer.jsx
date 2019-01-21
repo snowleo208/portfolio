@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import * as json from './portfolio.json';
+import * as json from '../portfolio.json';
 
 class Footer extends Component {
   render() {

@@ -44,14 +44,12 @@ class Blog extends Component {
   render() {
     const translate = json.default;
 
-    if (this.state.post !== []) {
-      return (
-        <section className="c-post u-section-padding">
-          <h1 className="c-post-title u-section-header">
-            {translate.blogTitle}
-          </h1>
-          <div className="c-post-grid">
-            {this.state.post.map(post => (
+    return (
+      <section className="c-post u-section-padding">
+        <h1 className="c-post-title u-section-header">{translate.blogTitle}</h1>
+        <div className="c-post-grid">
+          {this.state.post !== [] &&
+            this.state.post.map(post => (
               <div className="c-post-item" key={post.id}>
                 <a href={post.link} target="_blank" rel="noopener noreferrer">
                   <img
@@ -68,12 +66,9 @@ class Blog extends Component {
                 </div>
               </div>
             ))}
-          </div>
-        </section>
-      );
-    } else {
-      return '';
-    }
+        </div>
+      </section>
+    );
   }
 }
 

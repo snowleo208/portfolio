@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Menu from './Menu';
-import Button from './Utils/Button';
-import * as json from './portfolio.json';
+import Menu from '../Menu';
+import Button from './Button';
+import * as json from '../portfolio.json';
 
 class Header extends Component {
   constructor(props) {

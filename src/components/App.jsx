@@ -5,10 +5,11 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import '../../css/main.sass';
 
-import Home from './Home';
-import About from './About';
+import Home from './Page/Home';
+import About from './Page/About';
+import ProjectPage from './Page/ProjectPage';
 import ProjectDetails from './ProjectDetails';
-import Footer from './Footer';
+import Footer from './Utils/Footer';
 import ScrollToTop from './Utils/ScrollToTop';
 
 class App extends Component {
@@ -29,6 +30,7 @@ class App extends Component {
                       <Switch location={location}>
                         <Route path="/" exact component={Home} />
                         <Route path="/about" exact component={About} />
+                        <Route path="/project" exact component={ProjectPage} />
                         <Route
                           path="/project/:url"
                           component={ProjectDetails}

@@ -93,7 +93,9 @@ class Menu extends Component {
           <li>
             <Link to="/about/">About</Link>
           </li>
-          <li>Works</li>
+          <li>
+            <Link to="/project/">Works</Link>
+          </li>
           <li>Contact</li>
         </ul>
       </nav>
