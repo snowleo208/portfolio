@@ -6,7 +6,14 @@ class Blog extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      post: [],
+      post: [
+        {
+          id: 0,
+          title: 'entry.title',
+          link: 'entry.link',
+          date: 'entry.pubDate',
+        },
+      ],
     };
   }
   parseRss = () => {
@@ -37,6 +44,26 @@ class Blog extends Component {
     });
   };
 
+  renderPost = () => {
+    return this.state.post.map(post => (
+      <div className="c-post-item" key={post.id}>
+        <a href={post.link} target="_blank" rel="noopener noreferrer">
+          <img
+            className="c-post-img"
+            src="assets/dev_to_logo.jpg"
+            alt="Dev.to"
+          />
+        </a>
+        <div className="c-post-text">
+          <a href={post.link} target="_blank" rel="noopener noreferrer">
+            <h3>{post.title}</h3>
+          </a>
+          <p className="date">{post.date.slice(0, 16)}</p>
+        </div>
+      </div>
+    ));
+  };
+
   componentDidMount() {
     this.parseRss();
   }
@@ -44,28 +71,30 @@ class Blog extends Component {
   render() {
     const translate = json.default;
 
+    const list = this.state.post.map(post => (
+      <div className="c-post-item" key={post.id}>
+        <a href={post.link} target="_blank" rel="noopener noreferrer">
+          <img
+            className="c-post-img"
+            src="assets/dev_to_logo.jpg"
+            alt="Dev.to"
+          />
+        </a>
+        <div className="c-post-text">
+          <a href={post.link} target="_blank" rel="noopener noreferrer">
+            <h3>{post.title}</h3>
+          </a>
+          <p className="date">{post.date.slice(0, 16)}</p>
+        </div>
+      </div>
+    ));
+
     return (
       <section className="c-post u-section-padding">
         <h1 className="c-post-title u-section-header">{translate.blogTitle}</h1>
         <div className="c-post-grid">
-          {this.state.post !== [] &&
-            this.state.post.map(post => (
-              <div className="c-post-item" key={post.id}>
-                <a href={post.link} target="_blank" rel="noopener noreferrer">
-                  <img
-                    className="c-post-img"
-                    src="assets/dev_to_logo.jpg"
-                    alt="Dev.to"
-                  />
-                </a>
-                <div className="c-post-text">
-                  <a href={post.link} target="_blank" rel="noopener noreferrer">
-                    <h3>{post.title}</h3>
-                  </a>
-                  <p className="date">{post.date.slice(0, 16)}</p>
-                </div>
-              </div>
-            ))}
+          {list}
+          <p>View more posts here</p>
         </div>
       </section>
     );

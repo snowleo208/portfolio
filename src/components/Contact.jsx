@@ -45,12 +45,7 @@ class Contact extends Component {
             need. Everything would be tailor-made and suit for your needs.
           </p>
         </div>
-        <form
-          className="c-form"
-          id="form"
-          action="https://formspree.io/yukicheung@atrera.com"
-          method="POST"
-        >
+        <form className="c-form" id="form" action="" method="POST">
           <label htmlFor="email">
             <span className="c-form-label">
               Email <abbr title="Required">*</abbr>

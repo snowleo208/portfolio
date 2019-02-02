@@ -77,6 +77,7 @@ class Menu extends Component {
         {/* Menu button only shown in mobile */}
         <button
           className={this.state.width ? 'c-menu u-hide' : 'c-menu-mobile'}
+          aria-expanded="false"
         >
           <div className="c-menu-mobile--icon">
             <span className="c-menu__line1" />
@@ -96,7 +97,9 @@ class Menu extends Component {
           <li>
             <Link to="/project/">Works</Link>
           </li>
-          <li>Contact</li>
+          <li>
+            <Link to="/contact/">Contact</Link>
+          </li>
         </ul>
       </nav>
     );
