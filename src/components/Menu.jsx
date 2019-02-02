@@ -87,7 +87,11 @@ class Menu extends Component {
         </button>
 
         {/* Menu contents hide in mobile */}
-        <ul className={this.state.width ? 'c-menu' : 'c-menu u-hide'}>
+        <ul
+          className={
+            !this.state.open && this.state.width ? 'c-menu' : 'c-menu u-hide'
+          }
+        >
           <li>
             <Link to="/">Home</Link>
           </li>

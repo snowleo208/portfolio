@@ -6,20 +6,14 @@ class Blog extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      post: [
-        {
-          id: 0,
-          title: 'entry.title',
-          link: 'entry.link',
-          date: 'entry.pubDate',
-        },
-      ],
+      post: [],
     };
   }
   parseRss = () => {
     const parser = new RSSParser();
     const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
-    const post = [];
+    const postList = [];
+    const that = this;
 
     //get dev.to feed via Parser and CORS proxy
     parser.parseURL(CORS_PROXY + 'https://dev.to/feed/snowleo208', function(
@@ -29,7 +23,7 @@ class Blog extends Component {
       feed.items.forEach(function(entry, idx) {
         if (idx < 3) {
           //only push three posts
-          post.push({
+          postList.push({
             id: idx,
             title: entry.title,
             link: entry.link,
@@ -37,14 +31,16 @@ class Blog extends Component {
           });
         }
       });
-    });
+      console.log(postList);
 
-    this.setState({
-      post,
+      that.setState({
+        post: postList,
+      });
     });
   };
 
   renderPost = () => {
+    console.log(this.state.post);
     return this.state.post.map(post => (
       <div className="c-post-item" key={post.id}>
         <a href={post.link} target="_blank" rel="noopener noreferrer">
@@ -92,10 +88,7 @@ class Blog extends Component {
     return (
       <section className="c-post u-section-padding">
         <h1 className="c-post-title u-section-header">{translate.blogTitle}</h1>
-        <div className="c-post-grid">
-          {list}
-          <p>View more posts here</p>
-        </div>
+        <div className="c-post-grid">{list}</div>
       </section>
     );
   }
