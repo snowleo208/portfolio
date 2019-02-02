@@ -14,18 +14,23 @@ class Contact extends Component {
       formValid: false,
       isSubmit: false,
     };
+    this.emailField = React.createRef();
+    this.nameField = React.createRef();
+    this.messageField = React.createRef();
   }
 
-  formChange = item => {
-    console.log(item.target.value, item.target.validity.valid);
+  formChange = e => {
+    e.preventDefault();
     this.setState({
-      [item.target.name]: item.target.value,
-      [`${item.target.name}Valid`]: item.target.validity.valid,
+      [e.target.name]: e.target.value,
+      [`${e.target.name}Valid`]: e.target.validity.valid,
     });
+    e.target.setAttribute('data-input', 'true');
   };
 
+  checkAllValid = () => {};
+
   onSubmit = e => {
-    console.log(e);
     e.preventDefault();
     if (!this.state.isSubmit) {
       this.setState({
@@ -58,9 +63,9 @@ class Contact extends Component {
               required="required"
               pattern=".{3,}"
               onChange={e => this.formChange(e)}
-              aria-invalid={
-                this.state.isSubmit && this.state.emailValid ? 'true' : 'false'
-              }
+              aria-invalid={!this.state.emailValid ? 'true' : 'false'}
+              data-input="false"
+              ref={this.emailField}
             />
             <span
               className={this.state.emailValid ? 'u-alert' : 'u-alert invalid'}
@@ -78,9 +83,9 @@ class Contact extends Component {
               name="name"
               pattern="^[A-Za-z ,.'-]+$"
               onChange={e => this.formChange(e)}
-              aria-invalid={
-                this.state.isSubmit && this.state.nameValid ? 'true' : 'false'
-              }
+              aria-invalid={!this.state.nameValid ? 'true' : 'false'}
+              data-input="false"
+              ref={this.nameField}
             />
             <span
               className={this.state.nameValid ? 'u-alert' : 'u-alert invalid'}
@@ -96,20 +101,17 @@ class Contact extends Component {
             <textarea
               className="c-form-input"
               id="form-message"
-              minLength="10"
               maxLength="400"
               rows="4"
               name="message"
               required="required"
               onChange={e => this.formChange(e)}
-              aria-invalid={
-                this.state.isSubmit && this.state.messageValid
-                  ? 'true'
-                  : 'false'
-              }
+              aria-invalid={!this.state.messageValid ? 'true' : 'false'}
+              data-input="false"
+              ref={this.messageField}
             />
             <span className="c-form-input__length">
-              <span id="form-message-length">0</span>
+              <span id="form-message-length">{this.state.message.length}</span>
               /400
             </span>
             <span

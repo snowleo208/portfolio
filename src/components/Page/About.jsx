@@ -62,7 +62,7 @@ class About extends Component {
 
             <Button
               className="c-about-cta"
-              target="/"
+              target="/contact"
               value={translate.aboutButton}
             />
           </div>
