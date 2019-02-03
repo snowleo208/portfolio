@@ -13,6 +13,7 @@ class Contact extends Component {
       messageValid: true,
       formValid: false,
       isSubmit: false,
+      showThankyou: false,
     };
     this.emailField = React.createRef();
     this.nameField = React.createRef();
@@ -48,12 +49,36 @@ class Contact extends Component {
 
   onSubmit = e => {
     e.preventDefault();
+    const result = this.checkAllValid();
+    const body = {
+      email: this.state.email,
+      name: this.state.name,
+      message: this.state.message,
+    };
 
     //set isSubmit and formValid to true and validation value to trigger error message under form
     this.setState({
       isSubmit: true,
-      formValid: this.checkAllValid(),
+      formValid: result,
     });
+
+    if (result) {
+      return fetch('https://snowleo208.atrera.com/post.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      })
+        .then(res => res.json())
+        .then(json => {
+          if (json.status === 'true') {
+            this.setState({
+              showThankyou: true,
+            });
+          }
+        });
+    }
   };
 
   render() {
@@ -68,7 +93,7 @@ class Contact extends Component {
           </p>
         </div>
         <form
-          className="c-form"
+          className={this.state.showThankyou ? 'c-form u-hide' : 'c-form'}
           id="form"
           action="https://formspree.io/yukicheung@atrera.com"
           method="POST"
@@ -164,6 +189,16 @@ class Contact extends Component {
             Please correct all information and try again.
           </span>
         </form>
+        <div
+          className={
+            this.state.showThankyou
+              ? 'c-form-thankyou'
+              : 'c-form-thankyou u-hide'
+          }
+          aria-hidden="true"
+        >
+          <p>Thank you for your message! </p>
+        </div>
       </section>
     );
   }
