@@ -20,23 +20,40 @@ class Contact extends Component {
   }
 
   formChange = e => {
-    e.preventDefault();
+    e.preventDefault ? e.preventDefault() : '';
+
+    //if func triggered by event like input, it will use e.target, otherwise would be e.current, from React ref
+    const target = e.current ? e.current : e.target;
     this.setState({
-      [e.target.name]: e.target.value,
-      [`${e.target.name}Valid`]: e.target.validity.valid,
+      [target.name]: target.value,
+      [`${target.name}Valid`]: target.validity.valid,
     });
-    e.target.setAttribute('data-input', 'true');
+    target.setAttribute('data-input', 'true');
   };
 
-  checkAllValid = () => {};
+  checkAllValid = () => {
+    let count = 0; // var for checking validated field
+    const form = [this.emailField, this.nameField, this.messageField];
+    form.forEach(ele => {
+      this.formChange(ele);
+
+      //if field is correct, add count
+      if (ele.current.validity.valid) {
+        count++;
+      }
+    });
+
+    return count === form.length;
+  };
 
   onSubmit = e => {
     e.preventDefault();
-    if (!this.state.isSubmit) {
-      this.setState({
-        isSubmit: true,
-      });
-    }
+
+    //set isSubmit and formValid to true and validation value to trigger error message under form
+    this.setState({
+      isSubmit: true,
+      formValid: this.checkAllValid(),
+    });
   };
 
   render() {
@@ -50,7 +67,12 @@ class Contact extends Component {
             need. Everything would be tailor-made and suit for your needs.
           </p>
         </div>
-        <form className="c-form" id="form" action="" method="POST">
+        <form
+          className="c-form"
+          id="form"
+          action="https://formspree.io/yukicheung@atrera.com"
+          method="POST"
+        >
           <label htmlFor="email">
             <span className="c-form-label">
               Email <abbr title="Required">*</abbr>

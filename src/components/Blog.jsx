@@ -31,7 +31,7 @@ class Blog extends Component {
           });
         }
       });
-      console.log(postList);
+      // console.log(postList);
 
       that.setState({
         post: postList,
