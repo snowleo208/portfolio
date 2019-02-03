@@ -21,6 +21,17 @@ $text: rgb(95, 95, 95)
 // Base
 // ----------------------------------
 
+@mixin font-face($family, $filename, $style, $weight, $display)
+  @font-face
+    font-family: $family
+    src: local($family), url('../assets/#{$filename}.woff') format("woff"), url('../assets/#{$filename}.woff2') format("woff2")
+    font-style: $style
+    font-weight: $weight
+    font-display: $display
+
+@include font-face('Montserrat', 'montserrat-v12-latin-regular', 'normal', 400, 'fallback')
+@include font-face("Nunito Sans", 'nunito-sans-v3-latin-regular', 'normal', 400, 'swap')
+
 html
     margin: 0
     padding: 0
