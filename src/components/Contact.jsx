@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import * as json from './portfolio.json';
+import * as json from './portfolio.json';
 
 class Contact extends Component {
   constructor(props) {
@@ -82,15 +82,12 @@ class Contact extends Component {
   };
 
   render() {
-    // const translate = json.default;
+    const translate = json.default;
     return (
       <section className="c-contact u-section-padding fade-in">
         <div className="c-contact-details">
-          <h1>Contact Info:</h1>
-          <p>
-            Need a project? Feel free to contact me and let me know what you
-            need. Everything would be tailor-made and suit for your needs.
-          </p>
+          <h1>{translate.contactHeader}</h1>
+          <p>{translate.contactText}</p>
         </div>
         <form
           className={this.state.showThankyou ? 'c-form u-hide' : 'c-form'}

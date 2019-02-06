@@ -1,6 +1,6 @@
 {
     "header": "Grow and Develop",
-    "headerText": "I am a self-taught front-end web developer. Created landing pages and websites using for companies since 2017 with HTML/CSS and React. Love to write when having free time.",
+    "headerText": "I am a self-taught front-end web developer. Created landing pages and websites for companies since 2017, mainly focused on HTML/CSS/JS and React. Love to write when having free time.",
     "aboutHeader": "I am Yuki Cheung",
     "aboutText": "I am a web developer focused on front-end technologies.",
     "aboutDesc": "Hello, I am Yuki! A front-end web developer who joined this field since 2017. Good at CSS and React/JavaScript and always searching ways to optimize my workflow.",
@@ -88,6 +88,8 @@
             "gallery": ["hava-weather-app_1.jpg", "hava-weather-app_2.jpg"]
         }
     ],
+    "contactHeader": "Contact Me",
+    "contactText": "Need a project? Feel free to contact me and let me know what you need. Everything would be tailor-made and suit for your needs.",
     "footer": [{
             "id": "github",
             "url": "https://github.com/snowleo208"

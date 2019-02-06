@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
+
 import Menu from '../Menu';
 import * as json from '../portfolio.json';
 import Button from '../Utils/Button';
@@ -39,6 +41,9 @@ class About extends Component {
 
     return (
       <React.Fragment>
+        <Helmet>
+          <title>About | Yuki Cheung</title>
+        </Helmet>
         <Menu />
         <section className="c-about u-section-padding u-section-margin">
           <div className="c-about-desc">

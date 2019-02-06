@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
+
 import Header from '../Utils/Header';
 import Project from '../Project';
 import Blog from '../Blog';
@@ -9,6 +11,9 @@ class Home extends Component {
   render() {
     return (
       <div>
+        <Helmet>
+          <title>Portfolio | Yuki Cheung</title>
+        </Helmet>
         <Header />
         <Project />
         <Logo />

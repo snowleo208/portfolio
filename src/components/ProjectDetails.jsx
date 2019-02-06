@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
+
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -36,6 +38,9 @@ class ProjectDetails extends Component {
                   className="c-details-item u-section-padding"
                   key={ele.urlKey}
                 >
+                  <Helmet>
+                    <title>{ele.name} - Projects | Yuki Cheung</title>
+                  </Helmet>
                   <div className="c-details-intro">
                     <h1>{ele.name}</h1>
                     <p className="c-details-desc">{ele.desc}</p>
