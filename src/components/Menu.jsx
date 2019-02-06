@@ -2,32 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
-
-const debounce = (func, wait, immediate) => {
-  let timeout;
-  return function() {
-    let context = this,
-      args = arguments;
-
-    let later = function() {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
-    };
-
-    let callNow = immediate && !timeout;
-
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-
-    if (callNow) func.apply(context, args);
-  };
-};
+import debounce from './Utils/debounce';
 
 class Menu extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLaptop: window.innerWidth > 768,
       timer: 0,
       open: false,
       isFixed: false,
@@ -40,12 +20,16 @@ class Menu extends Component {
   };
 
   resize = () => {
-    this.setState(prevState => {
-      return {
-        isLaptop: window.innerWidth > 768,
-        open: window.innerWidth > 768 ? false : prevState.open,
-      };
-    });
+    if (window.innerWidth <= 768) {
+      this.setState({
+        open: false,
+      });
+    } else if (this.menu.current) {
+      this.menu.current.className = 'c-menu';
+
+      //disable scroll for body
+      this.setScroll(false);
+    }
   };
 
   menuItemOnClick = () => {
@@ -55,30 +39,40 @@ class Menu extends Component {
           open: !prevState.open,
         };
       });
-      this.menuBtn.focus();
+      this.menuBtn.current.focus();
+
+      //disable scroll for body
+      this.setScroll(false);
     }
   };
 
   onClick = () => {
+    const menu = this.menu.current;
     if (window.innerWidth <= 768) {
+      menu.classList.remove('hide');
       this.setState(prevState => {
+        //disable scroll for body
+        this.setScroll(!prevState.open);
+
         return {
           open: !prevState.open,
         };
       });
-      this.setNoScroll(true);
-      this.menu.focus();
+
+      //set focus to menu button if menu closes, to menu link if it opens
+      this.state.open
+        ? this.menu.current.focus()
+        : this.menuBtn.current.focus();
     } else {
-      this.setNoScroll(false);
-      this.menuBtn.focus();
+      this.setScroll(false);
       return false;
     }
   };
 
-  setNoScroll = bool => {
+  setScroll = bool => {
     if (bool) {
       document.body.classList.add('u-no-scroll');
-    } else {
+    } else if (!bool || document.body.classList.contains('u-no-scroll')) {
       document.body.classList.remove('u-no-scroll');
     }
   };
@@ -100,13 +94,14 @@ class Menu extends Component {
   };
 
   componentDidMount() {
-    window.addEventListener('resize', debounce(this.resize, 100));
+    window.addEventListener('resize', debounce(this.resize, 300));
     window.addEventListener('scroll', debounce(this.fixedMenu, 200));
   }
 
-  // componentWillUnmount() {
-  //   window.removeEventListener('resize', debounce(this.resize, 100));
-  // }
+  componentWillUnmount() {
+    window.removeEventListener('resize', debounce(this.resize, 300));
+    window.removeEventListener('scroll', debounce(this.fixedMenu, 200));
+  }
 
   render() {
     return (
@@ -114,20 +109,24 @@ class Menu extends Component {
         className={
           this.props.location.pathname !== '/'
             ? 'c-menu-wrapper no-banner'
+            : this.state.isFixed
+            ? 'c-menu-wrapper u-fixed'
             : 'c-menu-wrapper'
         }
       >
-        <div className="c-menu-logo">
-          <svg
-            className="c-menu-icon"
-            aria-labelledby="title"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            <title>Yuki Cheung</title>
-            <use href="assets/icon-sprite.svg#snowflake1" />
-          </svg>
-        </div>
+        <Link to="/">
+          <div className="c-menu-logo">
+            <svg
+              className="c-menu-icon"
+              aria-labelledby="title"
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <title>Yuki Cheung</title>
+              <use href="/assets/icon-sprite.svg#snowflake1" />
+            </svg>
+          </div>
+        </Link>
 
         {/* Menu button only shown in mobile */}
         <button
@@ -147,15 +146,15 @@ class Menu extends Component {
 
         {/* Menu contents hide in mobile */}
         <div
-          className={
-            this.state.open
-              ? 'c-menu-overlay'
-              : this.state.isLaptop
-              ? 'c-menu'
-              : 'u-hide'
+          ref={this.menu}
+          className={this.state.open ? 'c-menu c-menu-overlay' : 'c-menu'}
+          onTransitionEnd={() =>
+            !this.state.open && window.innerWidth <= 768
+              ? this.menu.current.classList.add('hide')
+              : ''
           }
         >
-          <ul className="c-menu" ref={this.menu}>
+          <ul className="c-menu-list">
             <li>
               <Link onClick={this.menuItemOnClick} to="/">
                 Home

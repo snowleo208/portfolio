@@ -4,7 +4,7 @@
     "aboutHeader": "I am Yuki Cheung",
     "aboutText": "I am a web developer focused on front-end technologies.",
     "aboutDesc": "Hello, I am Yuki! A front-end web developer who joined this field since 2017. Good at CSS and React/JavaScript and always searching ways to optimize my workflow.",
-    "aboutDesc1": "Love to write and learning new languages. Native in Cantonese, and fluent in Japanese and English. Currently learning German. Feel free to drop me a line!",
+    "aboutDesc1": "Love writing and learning new languages. Native in Cantonese, fluent in Japanese and English. Currently learning German. Feel free to drop me a line!",
     "skills": {
         "frontend": ["React", "Javascript", "Responsive websites", "HTML", "CSS/SASS/LESS"],
         "backend": ["Node.js", "PHP/Laravel", "MySQL / PostgresQL", "GraphQL", "Linux"],

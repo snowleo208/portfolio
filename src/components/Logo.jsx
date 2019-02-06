@@ -6,14 +6,16 @@ class Logo extends Component {
     const translate = json.default;
     return (
       <section className="c-logo">
-        {translate.brandList.map(item => (
-          <img
-            className="c-logo-item"
-            key={item}
-            src={`assets/${item}-logo.jpg`}
-            alt={item}
-          />
-        ))}
+        <div className="c-logo-container">
+          {translate.brandList.map(item => (
+            <img
+              className="c-logo-item"
+              key={item}
+              src={`assets/${item}-logo.jpg`}
+              alt={item}
+            />
+          ))}
+        </div>
       </section>
     );
   }

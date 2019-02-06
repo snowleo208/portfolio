@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
-// import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import { TransitionGroup } from 'react-transition-group';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import '../../css/main.sass';
 
@@ -20,26 +18,16 @@ class App extends Component {
         <ScrollToTop>
           <Route
             render={({ location }) => (
-              <div>
-                <div>
-                  <TransitionGroup>
-                    {/* <CSSTransition
-                      key={location.key}
-                      classNames="transit"
-                      timeout={300}
-                    > */}
-                    <Switch location={location}>
-                      <Route path="/" exact component={Home} />
-                      <Route path="/about" exact component={About} />
-                      <Route path="/project" exact component={ProjectPage} />
-                      <Route path="/contact" exact component={ContactPage} />
-                      <Route path="/project/:url" component={ProjectDetails} />
-                      <Route render={() => <h1>404 Not Found</h1>} />
-                    </Switch>
-                    {/* </CSSTransition> */}
-                  </TransitionGroup>
-                  <Footer />
-                </div>
+              <div className="app-container">
+                <Switch location={location}>
+                  <Route path="/" exact component={Home} />
+                  <Route path="/about" exact component={About} />
+                  <Route path="/project" exact component={ProjectPage} />
+                  <Route path="/contact" exact component={ContactPage} />
+                  <Route path="/project/:url" component={ProjectDetails} />
+                  <Route render={() => <h1>404 Not Found</h1>} />
+                </Switch>
+                <Footer />
               </div>
             )}
           />
