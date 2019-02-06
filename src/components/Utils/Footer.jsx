@@ -26,7 +26,16 @@ class Footer extends Component {
             </a>
           ))}
         </div>
-        <p>{new Date().getFullYear()} © Code by Yuki Cheung</p>
+        <p>
+          {new Date().getFullYear()} © Code by Yuki Cheung. Design by{' '}
+          <a
+            href="https://dribbble.com/shots/3782221-Free-PSD-Portfolio-Template"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Svetlana
+          </a>
+        </p>
       </footer>
     );
   }

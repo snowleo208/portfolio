@@ -84,7 +84,7 @@ class Contact extends Component {
   render() {
     // const translate = json.default;
     return (
-      <section className="c-contact u-section-padding">
+      <section className="c-contact u-section-padding fade-in">
         <div className="c-contact-details">
           <h1>Contact Info:</h1>
           <p>
@@ -95,7 +95,6 @@ class Contact extends Component {
         <form
           className={this.state.showThankyou ? 'c-form u-hide' : 'c-form'}
           id="form"
-          action="https://formspree.io/yukicheung@atrera.com"
           method="POST"
         >
           <label htmlFor="email">
@@ -195,7 +194,7 @@ class Contact extends Component {
               ? 'c-form-thankyou'
               : 'c-form-thankyou u-hide'
           }
-          aria-hidden="true"
+          aria-hidden={this.state.showThankyou ? 'false' : 'true'}
         >
           <p>Thank you for your message! </p>
         </div>

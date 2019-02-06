@@ -27,10 +27,13 @@ class Menu extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      width: window.innerWidth > 768,
+      isLaptop: window.innerWidth > 768,
       timer: 0,
       open: false,
+      isFixed: false,
     };
+    this.menu = React.createRef();
+    this.menuBtn = React.createRef();
   }
   static propTypes = {
     location: PropTypes.object.isRequired,
@@ -39,14 +42,66 @@ class Menu extends Component {
   resize = () => {
     this.setState(prevState => {
       return {
-        width: window.innerWidth > 768,
+        isLaptop: window.innerWidth > 768,
         open: window.innerWidth > 768 ? false : prevState.open,
       };
     });
   };
 
+  menuItemOnClick = () => {
+    if (window.innerWidth <= 768) {
+      this.setState(prevState => {
+        return {
+          open: !prevState.open,
+        };
+      });
+      this.menuBtn.focus();
+    }
+  };
+
+  onClick = () => {
+    if (window.innerWidth <= 768) {
+      this.setState(prevState => {
+        return {
+          open: !prevState.open,
+        };
+      });
+      this.setNoScroll(true);
+      this.menu.focus();
+    } else {
+      this.setNoScroll(false);
+      this.menuBtn.focus();
+      return false;
+    }
+  };
+
+  setNoScroll = bool => {
+    if (bool) {
+      document.body.classList.add('u-no-scroll');
+    } else {
+      document.body.classList.remove('u-no-scroll');
+    }
+  };
+
+  fixedMenu = () => {
+    if (
+      window.scrollY > 100 ||
+      window.pageYOffset > 100 ||
+      document.documentElement.scrollTop > 100
+    ) {
+      this.setState({
+        isFixed: true,
+      });
+    } else {
+      this.setState({
+        isFixed: false,
+      });
+    }
+  };
+
   componentDidMount() {
     window.addEventListener('resize', debounce(this.resize, 100));
+    window.addEventListener('scroll', debounce(this.fixedMenu, 200));
   }
 
   // componentWillUnmount() {
@@ -76,10 +131,14 @@ class Menu extends Component {
 
         {/* Menu button only shown in mobile */}
         <button
-          className={this.state.width ? 'c-menu u-hide' : 'c-menu-mobile'}
-          aria-expanded="false"
+          className={
+            this.state.open ? 'c-menu-btn c-menu-btn__open' : 'c-menu-btn'
+          }
+          aria-expanded={this.state.open ? 'true' : 'false'}
+          onClick={this.onClick}
+          ref={this.menuBtn}
         >
-          <div className="c-menu-mobile--icon">
+          <div className="c-menu-btn--icon">
             <span className="c-menu__line1" />
             <span className="c-menu__line2" />
             <span className="c-menu__line3" />
@@ -87,24 +146,38 @@ class Menu extends Component {
         </button>
 
         {/* Menu contents hide in mobile */}
-        <ul
+        <div
           className={
-            !this.state.open && this.state.width ? 'c-menu' : 'c-menu u-hide'
+            this.state.open
+              ? 'c-menu-overlay'
+              : this.state.isLaptop
+              ? 'c-menu'
+              : 'u-hide'
           }
         >
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about/">About</Link>
-          </li>
-          <li>
-            <Link to="/project/">Works</Link>
-          </li>
-          <li>
-            <Link to="/contact/">Contact</Link>
-          </li>
-        </ul>
+          <ul className="c-menu" ref={this.menu}>
+            <li>
+              <Link onClick={this.menuItemOnClick} to="/">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link onClick={this.menuItemOnClick} to="/about/">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link onClick={this.menuItemOnClick} to="/project/">
+                Works
+              </Link>
+            </li>
+            <li>
+              <Link onClick={this.menuItemOnClick} to="/contact/">
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
       </nav>
     );
   }

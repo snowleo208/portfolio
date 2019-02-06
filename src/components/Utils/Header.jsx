@@ -11,23 +11,25 @@ class Header extends Component {
   render() {
     const translate = json.default;
     return (
-      <section className="c-header">
-        <Menu />
+      <header>
+        <section className="c-header">
+          <Menu />
 
-        <div className="c-header-banner">
-          <div className="c-header-banner__grid">
-            <React.Fragment>
-              <h1>{translate.header}</h1>
-              <p className="c-header-text">{translate.headerText}</p>
-            </React.Fragment>
-            <Button
-              className="c-header-cta"
-              target="/about/"
-              value={translate.headerButton}
-            />
+          <div className="c-header-banner fade-in">
+            <div className="c-header-banner__grid">
+              <React.Fragment>
+                <h1>{translate.header}</h1>
+                <p className="c-header-text">{translate.headerText}</p>
+              </React.Fragment>
+              <Button
+                className="c-header-cta"
+                target="/about/"
+                value={translate.headerButton}
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </header>
     );
   }
 }

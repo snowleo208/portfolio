@@ -67,7 +67,7 @@ class About extends Component {
             />
           </div>
 
-          <div className="c-about-img">
+          <div className="c-about-img fade-in">
             <img src="/assets/about_01_m.jpg" alt="" />
           </div>
         </section>
