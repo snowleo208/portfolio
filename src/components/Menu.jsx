@@ -96,6 +96,10 @@ class Menu extends Component {
   componentDidMount() {
     window.addEventListener('resize', debounce(this.resize, 300));
     window.addEventListener('scroll', debounce(this.fixedMenu, 200));
+
+    window.innerWidth <= 768
+      ? this.menu.current.classList.add('u-menu-hide')
+      : '';
   }
 
   componentWillUnmount() {

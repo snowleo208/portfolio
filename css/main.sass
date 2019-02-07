@@ -242,7 +242,7 @@ a:visited
         z-index: 0
         background: none
 
-    &.hide
+    &.hide,&.u-menu-hide
         visibility: hidden
         z-index: -1
     &-list
@@ -308,12 +308,13 @@ a:visited
         .c-menu__line1, .c-menu__line2,.c-menu__line3
             background: white
         .c-menu__line1
-            transform: rotate(45deg) translateY(2px) translateX(2px)
+            transform: rotate(45deg)
         .c-menu__line2
+            margin: 0
             opacity: 0
             transform: translateX(500%)
         .c-menu__line3
-            transform: rotate(-45deg) translateY(-6px) translateX(6px)
+            transform: rotate(-45deg) translateY(-3px) translateX(3px)
     &--icon
         display: flex
         justify-content: center
