@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as json from './portfolio.json';
 import RSSParser from 'rss-parser';
+import LazyLoad from 'react-lazyload';
 
 class Blog extends Component {
   constructor(props) {
@@ -39,27 +40,6 @@ class Blog extends Component {
     });
   };
 
-  renderPost = () => {
-    console.log(this.state.post);
-    return this.state.post.map(post => (
-      <div className="c-post-item" key={post.id}>
-        <a href={post.link} target="_blank" rel="noopener noreferrer">
-          <img
-            className="c-post-img"
-            src="assets/dev_to_logo.jpg"
-            alt="Dev.to"
-          />
-        </a>
-        <div className="c-post-text">
-          <a href={post.link} target="_blank" rel="noopener noreferrer">
-            <h3>{post.title}</h3>
-          </a>
-          <p className="date">{post.date.slice(0, 16)}</p>
-        </div>
-      </div>
-    ));
-  };
-
   componentDidMount() {
     this.parseRss();
   }
@@ -68,21 +48,23 @@ class Blog extends Component {
     const translate = json.default;
 
     const list = this.state.post.map(post => (
-      <div className="c-post-item" key={post.id}>
-        <a href={post.link} target="_blank" rel="noopener noreferrer">
-          <img
-            className="c-post-img"
-            src="assets/dev_to_logo.jpg"
-            alt="Dev.to"
-          />
-        </a>
-        <div className="c-post-text">
+      <LazyLoad height={300} key={post.id} offset={100} once>
+        <div className="c-post-item" key={post.id}>
           <a href={post.link} target="_blank" rel="noopener noreferrer">
-            <h3>{post.title}</h3>
+            <img
+              className="c-post-img"
+              src="assets/dev_to_logo.jpg"
+              alt="Dev.to"
+            />
           </a>
-          <p className="date">{post.date.slice(0, 16)}</p>
+          <div className="c-post-text">
+            <a href={post.link} target="_blank" rel="noopener noreferrer">
+              <h3>{post.title}</h3>
+            </a>
+            <p className="date">{post.date.slice(0, 16)}</p>
+          </div>
         </div>
-      </div>
+      </LazyLoad>
     ));
 
     return (

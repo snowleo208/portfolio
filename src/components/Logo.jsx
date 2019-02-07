@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as json from './portfolio.json';
+import LazyLoad from 'react-lazyload';
 
 class Logo extends Component {
   render() {
@@ -8,12 +9,13 @@ class Logo extends Component {
       <section className="c-logo">
         <div className="c-logo-container">
           {translate.brandList.map(item => (
-            <img
-              className="c-logo-item"
-              key={item}
-              src={`assets/${item}-logo.jpg`}
-              alt={item}
-            />
+            <LazyLoad height={96} key={item}>
+              <img
+                className="c-logo-item"
+                src={`assets/${item}-logo.jpg`}
+                alt={item}
+              />
+            </LazyLoad>
           ))}
         </div>
       </section>

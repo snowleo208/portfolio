@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazyload';
 
 import * as json from './portfolio.json';
 import Menu from './Menu';
@@ -73,12 +74,14 @@ class ProjectDetails extends Component {
                   <section className="c-details-gallery">
                     {ele.gallery
                       ? ele.gallery.map(item => (
-                          <div className="c-details-gallery__item" key={item}>
-                            <img
-                              src={`/assets/projects/gallery/${item}`}
-                              alt=""
-                            />
-                          </div>
+                          <LazyLoad height={350} key={item} offset={100}>
+                            <div className="c-details-gallery__item">
+                              <img
+                                src={`/assets/projects/gallery/${item}`}
+                                alt=""
+                              />
+                            </div>
+                          </LazyLoad>
                         ))
                       : ''}
                   </section>
