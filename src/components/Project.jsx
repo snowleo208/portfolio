@@ -42,7 +42,7 @@ class Project extends Component {
             backgroundImage: `url(/assets/projects/${item.urlKey}.jpg)`,
           }}
         >
-          <Link to={`./project/${item.urlKey}`}>
+          <Link to={`/project/${item.urlKey}`}>
             <div className="c-project-item__overlay">
               <h2>{item.name}</h2>
               <p>{item.category}</p>
