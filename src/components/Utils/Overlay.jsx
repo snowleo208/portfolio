@@ -9,6 +9,10 @@ class Overlay extends Component {
   componentDidUpdate(prevProps) {
     if (prevProps.isOpen !== this.props.isOpen && this.props.isOpen) {
       this.closeBtn.current.focus();
+      document.body.classList.add('u-no-scroll');
+    }
+    if (prevProps.isOpen !== this.props.isOpen && !this.props.isOpen) {
+      document.body.classList.remove('u-no-scroll');
     }
   }
   render() {

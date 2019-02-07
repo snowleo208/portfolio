@@ -516,7 +516,8 @@ a:visited
 
 .c-details-item
     background: $bg
-    padding: 2.5em 4em
+    @media #{$laptop}
+        padding: 2.5em 4em
 
 .c-details-spec
     td
@@ -576,12 +577,17 @@ a:visited
     right: 0
     background: rgba(25,25,25,0.6)
     opacity: 1
+    overflow-y: auto
+    overflow-x: hidden
     transition: opacity ease 400ms
     .c-menu-btn
         position: absolute
         display: block
         top: 0
         right: 0
+        background: white
+        span
+            background: $text
     img
         display: block
         width: 100%
