@@ -35,15 +35,28 @@
     <link rel="icon" type="image/png" sizes="96x96" href="./assets/favico/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favico/favicon-16x16.png">
     <meta name="msapplication-TileImage" content="./assets/favico/ms-icon-144x144.png">
-    <link rel="preload" href="https://yukicheung.atrera.com/assets/montserrat-v12-latin-regular.woff2" as=“font”>
-    <link rel="preload" href="https://yukicheung.atrera.com/assets/nunito-sans-v3-latin-600.woff2" as=“font”>
-    <link rel="preload" href="https://yukicheung.atrera.com/assets/montserrat-v12-latin-500.woff2" as=“font”>
-    <link rel="preload" href="https://yukicheung.atrera.com/assets/nunito-sans-v3-latin-regular.woff2" as=“font”>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500|Nunito+Sans" rel="stylesheet">
     <title>Portfolio | Yuki Cheung</title>
 </head>
 
 <body>
     <section id="app"></section>
+    <script type="text/javascript">
+        WebFontConfig = {
+            google: {
+                families: ['Nunito+Sans:400', 'Montserrat:500']
+            }
+        };
+
+        (function () {
+            var wf = document.createElement('script');
+            wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
     <script src="//polyfill.io/v3/polyfill.min.js"></script>
 </body>
 

@@ -21,18 +21,17 @@ $text: rgb(95, 95, 95)
 // Base
 // ----------------------------------
 
-@mixin font-face($family, $filename, $style, $weight, $display)
-  @font-face
-    font-family: $family
-    src: local($family), url('../assets/#{$filename}.woff2') format("woff2"), url('../assets/#{$filename}.woff') format("woff")
-    font-style: $style
-    font-weight: $weight
-    font-display: $display
+// @mixin font-face($family, $filename, $style, $weight, $display)
+//   @font-face
+//     font-family: $family
+//     src: local($family), url('../assets/#{$filename}.woff2') format("woff2"), url('../assets/#{$filename}.woff') format("woff")
+//     font-style: $style
+//     font-weight: $weight
+//     font-display: $display
 
-@include font-face('Montserrat', 'montserrat-v12-latin-regular', 'normal', 400, 'fallback')
-@include font-face('Montserrat', 'montserrat-v12-latin-600', 'bold', 600, 'fallback')
-@include font-face("Nunito Sans", 'nunito-sans-v3-latin-regular', 'normal', 400, 'swap')
-@include font-face("Nunito Sans", 'nunito-sans-v3-latin-600', 'bold', 600, 'swap')
+// @include font-face('Montserrat', 'montserrat-v12-latin-500', 'bold', 500, 'fallback')
+// @include font-face("Nunito Sans", 'nunito-sans-v3-latin-regular', 'normal', 400, 'swap')
+// @include font-face("Nunito Sans", 'nunito-sans-v3-latin-600', 'bold', 600, 'swap')
 
 html
     margin: 0
@@ -68,7 +67,7 @@ body
 
 h1,h2,h3,h4,h5, h6
     font-family: 'Montserrat', sans-serif
-    font-weight: 600
+    font-weight: 500
     color: $title
 
 h1
