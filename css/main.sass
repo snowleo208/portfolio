@@ -215,6 +215,34 @@ a:visited
     padding: 1em
     &.no-banner
         position: relative
+    &.u-fixed
+        position: fixed
+        top: 0
+        left: 0
+        background: white
+        z-index: 1030
+        animation: fixed-mobile ease 400ms
+        @media #{$tablet}
+            animation: fixed ease 400ms
+
+
+@keyframes fixed-mobile
+    0%
+        opacity: 0
+        height: 0
+    80%
+        height: 5.5em
+    100%
+        opacity: 1
+
+@keyframes fixed
+    0%
+        opacity: 0
+        height: 0
+    80%
+        height: 4.25em
+    100%
+        opacity: 1
 
 .c-menu
     position: fixed
