@@ -18,14 +18,14 @@
     "projects": [{
             "id": 0,
             "category": "commercial",
-            "urlKey": "ryugaku-miryoku",
-            "name": "Learning with EF Japan",
-            "link": "https://www.efjapan.co.jp/hub/asia/ryugaku-miryoku/",
-            "desc": "This is a landing page developed for EF Japan, for introducing the benefits of studying with EF Japan.",
-            "techDesc": "The main technologies are HTML, CSS, Javascript and the slider used slick.",
-            "client": "Education First Japan",
-            "date": "Augest, 2018",
-            "gallery": ["ryugaku-miryoku_1.jpg", "ryugaku-miryoku_2.jpg"]
+            "urlKey": "internship",
+            "name": "EF International Internship & Volunteer Programs",
+            "link": "https://www.ef.com.hk/hub/asia/internship/",
+            "desc": "This is a landing page developed for EF Hong Kong, for introducing internship programme to students and stakeholder like teachers and universities. Get data from backend API, with differernt design for destinations in mobile and desktop version. ",
+            "techDesc": "The main technologies are HTML, CSS, Javascript",
+            "client": "Education First Hong Kong",
+            "date": "Feb 2019",
+            "gallery": ["internship_1.jpg", "internship_2.jpg", "internship_3.jpg", "internship_4.jpg"]
         },
         {
             "id": 1,
