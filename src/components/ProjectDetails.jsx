@@ -119,7 +119,7 @@ class ProjectDetails extends Component {
         </section>
         <section className="c-details-menu">
           <Link to="/">
-            <p>Back to Top</p>
+            <p>Back to Home</p>
           </Link>
         </section>
         <Overlay isOpen={this.state.isOpen} openOverlay={this.openOverlay}>

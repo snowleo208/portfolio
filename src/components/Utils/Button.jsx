@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const onClick = (props, history) => {
   if (props.target.indexOf('http') >= 0) {
@@ -27,6 +28,12 @@ const Button = props => {
       )}
     />
   );
+};
+
+Button.propTypes = {
+  children: PropTypes.object,
+  className: PropTypes.string,
+  value: PropTypes.string,
 };
 
 export default Button;

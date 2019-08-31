@@ -77,25 +77,25 @@ class Menu extends Component {
     }
   };
 
-  fixedMenu = () => {
-    if (
-      window.scrollY > 100 ||
-      window.pageYOffset > 100 ||
-      document.documentElement.scrollTop > 100
-    ) {
-      this.setState({
-        isFixed: true,
-      });
-    } else {
-      this.setState({
-        isFixed: false,
-      });
-    }
-  };
+  // fixedMenu = () => {
+  //   if (
+  //     window.scrollY > 100 ||
+  //     window.pageYOffset > 100 ||
+  //     document.documentElement.scrollTop > 100
+  //   ) {
+  //     this.setState({
+  //       isFixed: true,
+  //     });
+  //   } else {
+  //     this.setState({
+  //       isFixed: false,
+  //     });
+  //   }
+  // };
 
   componentDidMount() {
     window.addEventListener('resize', debounce(this.resize, 300));
-    window.addEventListener('scroll', debounce(this.fixedMenu, 200));
+    // window.addEventListener('scroll', debounce(this.fixedMenu, 200));
 
     window.innerWidth <= 768
       ? this.menu.current.classList.add('u-menu-hide')
@@ -104,7 +104,7 @@ class Menu extends Component {
 
   componentWillUnmount() {
     window.removeEventListener('resize', debounce(this.resize, 300));
-    window.removeEventListener('scroll', debounce(this.fixedMenu, 200));
+    // window.removeEventListener('scroll', debounce(this.fixedMenu, 200));
   }
 
   render() {

@@ -5,7 +5,9 @@ const path = require("path");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const {
+  CleanWebpackPlugin
+} = require('clean-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require("html-webpack-harddisk-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
@@ -63,11 +65,7 @@ module.exports = merge(common, {
       publicPath: "./",
       filename: "style.[contenthash:5].css"
     }),
-    new CleanWebpackPlugin(["dist", "build"], {
-      verbose: true,
-      dry: false
-      // exclude: ['shared.js']
-    }),
+    new CleanWebpackPlugin(),
     new HtmlWebpackHarddiskPlugin({
       outputPath: path.resolve(__dirname, "./")
     }),
