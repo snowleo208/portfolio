@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
@@ -28,33 +28,33 @@ module.exports = merge(common, {
   },
   module: {
     rules: [{
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: [{
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env', '@babel/preset-react'],
-              plugins: [
-                '@babel/plugin-proposal-class-properties',
-                'react-hot-loader/babel',
-                "@babel/plugin-syntax-dynamic-import"
-              ]
-            }
-          },
-          {
-            loader: 'eslint-loader'
-          }
-        ]
+      test: /\.(js|jsx)$/,
+      exclude: /node_modules/,
+      use: [{
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env', '@babel/preset-react'],
+          plugins: [
+            '@babel/plugin-proposal-class-properties',
+            'react-hot-loader/babel',
+            "@babel/plugin-syntax-dynamic-import"
+          ]
+        }
       },
       {
-        test: /\.(css|sass|scss)$/,
-        use: [
-          'style-loader',
-          'css-loader?url=false',
-          'postcss-loader',
-          'sass-loader'
-        ]
+        loader: 'eslint-loader'
       }
+      ]
+    },
+    {
+      test: /\.(css|sass|scss)$/,
+      use: [
+        'style-loader',
+        'css-loader?url=false',
+        'postcss-loader',
+        'sass-loader'
+      ]
+    }
     ]
   },
   plugins: [
