@@ -1,20 +1,20 @@
 {
     "header": "Grow and Develop",
-    "headerText": "A front-end web developer. Created professional landing pages and websites since 2017, mainly focused on React, Angular and Jest/Jasmine. Love to write when having free time.",
+    "headerText": "A front-end web developer. Created professional landing pages and websites for serveral companies, mainly focused on React, styled components and Jest/Jasmine. Love to write when having free time.",
     "aboutHeader": "I am Yuki Cheung",
     "aboutText": "I am a web developer focused on front-end technologies.",
-    "aboutDesc": "Hello, I am Yuki! A front-end web developer emphasized UI/UX since 2017. Good at CSS and various JavaScript framework e.g. Angular/React. Equipped with unit testing skills by using Jasmine or Jest. Always searching for ways to optimize my workflow.",
-    "aboutDesc1": "Love writing and learning new languages. Native in Cantonese, fluent in Japanese and English. Currently learning German. Feel free to drop me a line!",
+    "aboutDesc": "Hello, I am Yuki! A front-end web developer emphasised UI/UX. Good at building user interfaces and work with various designers. Equipped with automated unit test and end-to-end test skills.",
+    "aboutDesc1": "Love writing and learning new languages. Native in Cantonese, fluent in Japanese and English. Feel free to drop me a line!",
     "skills": {
-        "frontend": ["React/Gatsby", "Angular", "Storybook", "HTML", "CSS/SASS/LESS"],
-        "backend": ["Node.js", "Java", "MySQL/PostgresQL", "GraphQL", "Linux"],
-        "tools": ["Git", "Gulp", "Webpack", "Jest"]
+        "frontend": ["React/Gatsby", "Angular", "Storybook", "styled components", "Typescript", "CSS/SASS/LESS"],
+        "backend": ["Node.js/Express", "Next.js", "MySQL/PostgresQL", "GraphQL", "Linux"],
+        "tools": ["Cypress", "Docker", "Webpack", "Jest", "CI/CD", "Monorepo/Lerna"]
     },
     "aboutButton": "Contact Me",
     "headerButton": "About Me",
     "projectsTitle": ["all", "side projects"],
-    "brandList": ["ef", "dbs"],
-    "blogTitle": "Blog Post",
+    "brandList": ["zoopla", "ef", "dbs"],
+    "blogTitle": "Recent Articles",
     "projects": [{
             "id": 0,
             "urlKey": "ryugaku-fair",

@@ -63,16 +63,15 @@ class Contact extends Component {
     });
 
     if (result) {
-      return fetch('https://snowleo208.atrera.com/post.php', {
+      return fetch('https://formspree.io/mzbkpjdj', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(body),
       })
-        .then(res => res.json())
-        .then(json => {
-          if (json.status === 'true') {
+        .then(res => {
+          if (res.status === 200) {
             this.setState({
               showThankyou: true,
             });
