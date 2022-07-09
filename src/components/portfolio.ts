@@ -39,18 +39,6 @@ export default {
             "gallery": ["uniquiz_1.jpg", "uniquiz_2.jpg", "uniquiz_3.jpg", "uniquiz_4.jpg"]
         },
         {
-            "id": 2,
-            "urlKey": "recipe-box",
-            "category": "side project",
-            "name": "Deres - Find your favourite recipes here!",
-            "link": "https://keen-borg-d5fcad.netlify.com/",
-            "desc": "Side project. This application is powered by Angular and Firestore. User can create or view public recipes. After login, they can create private recipes and manage their recipes in the dashboard. Moreover, they can like others' recipes. Only the author can edit their recipes and view private recipes.",
-            "techDesc": "The main technologies are Angular, Firestore, Jasmine.",
-            "client": "Nil",
-            "date": "Aug, 2019",
-            "gallery": ["recipe_box_1.jpg", "recipe_box_2.jpg", "recipe_box_3.jpg", "recipe_box_4.jpg"]
-        },
-        {
             "id": 3,
             "category": "commercial",
             "urlKey": "internship",
@@ -98,29 +86,6 @@ export default {
             "date": "December, 2018",
             "gallery": ["hot-deals_1.jpg", "hot-deals_2.jpg", "hot-deals_3.jpg", "hot-deals_4.jpg"]
         },
-        {
-            "id": 7,
-            "urlKey": "dbs",
-            "category": "commercial",
-            "name": "DBS Website Revamp",
-            "link": "https://www.dbs.com.hk/personal/",
-            "desc": "This is a website revamp for the DBS website. Responsible to move all contents from the old website to the new one, with responsive styles. On the same time, the website of Hong Kong need to follow the style guide of Singapore (parent company) but also have to be localized.",
-            "client": "DBS Bank (Hong Kong)",
-            "date": "March, 2017",
-            "gallery": ["dbs_1.jpg", "dbs_2.jpg"]
-        },
-        {
-            "id": 8,
-            "urlKey": "hava-weather-app",
-            "category": "side project",
-            "name": "Hava - Weather App",
-            "link": "https://hava-weather.herokuapp.com/",
-            "desc": "Side project. This app can view current local weather and powered by React.js and DarkSky API. Open it and view your local weather at a glance! You can also change temperature from °F to °C degrees using the switch on top right.",
-            "techDesc": "The main technologies are React, SASS/CSS.",
-            "client": "Nil",
-            "date": "May, 2018",
-            "gallery": ["hava-weather-app_1.jpg", "hava-weather-app_2.jpg"]
-        }
     ],
     "contactHeader": "Contact Me",
     "contactText": "Need a project? Feel free to contact me and let me know what you need. Everything would be tailor-made and suit your needs.",

@@ -54,6 +54,9 @@ const globalStyles = globalCss({
     fontWeight: 500,
     color: "rgb(23, 23, 23)"
   },
+  "a": {
+    textDecoration: "none"
+  },
   "h1": {
     fontSize: "2em",
     margin: "0 0 0.7em 0"

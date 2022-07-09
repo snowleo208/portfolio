@@ -1,21 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
+import {Project} from '../Project';
 
-import Menu from '../Menu';
-import Project from '../Project';
-
-class ProjectPage extends Component {
-  render() {
-    return (
-      <React.Fragment>
-        <Helmet>
+const ProjectPage = () => (
+  <>
+  <Helmet>
           <title>Projects | Yuki Cheung</title>
         </Helmet>
-        <Menu />
         <Project />
-      </React.Fragment>
-    );
-  }
-}
+        </>
+)
 
 export default ProjectPage;
