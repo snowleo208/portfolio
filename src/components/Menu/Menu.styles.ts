@@ -3,7 +3,10 @@ import { styled } from '@stitches/react';
 export const MenuWrapper = styled('div', {
     padding: "1rem",
     "@media only screen and (min-width : 992px)": {
-        padding: "1rem 4rem",
+        width: '100%',
+          maxWidth: 1140,
+          margin: '0 auto',
+          padding: "1rem 1rem",
     }
 });
 

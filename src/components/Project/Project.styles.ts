@@ -11,7 +11,9 @@ export const Title = styled('p', {
 
 export const ProjectGrid = styled('div', {
     display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)"
+    "@media only screen and (min-width : 768px)": {
+        gridTemplateColumns: "repeat(3, 1fr)",
+    },
 });
 
 export const ProjectOverlay = styled('div', {

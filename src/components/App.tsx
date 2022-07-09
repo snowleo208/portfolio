@@ -22,7 +22,7 @@ export const Layout = styled('div', {
   variants: {
     layout: {
       default: {
-        padding: '0 1rem',
+        padding: '1rem',
         '@media only screen and (min-width : 992px)': {
           maxWidth: 1140,
           margin: '0 auto',

@@ -3,6 +3,7 @@ import { styled } from '@stitches/react';
 export const AboutGrid = styled('div', {
     display: "grid",
     paddingBottom: "1rem",
+    rowGap: "1.5rem",
     "@media only screen and (min-width : 992px)": {
         gridTemplateColumns: "60% 1fr",
         columnGap: "1.5rem",
