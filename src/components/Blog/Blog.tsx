@@ -37,6 +37,7 @@ export function Blog() {
           <PostImage
             src={post.cover_image}
             alt="Dev.to"
+            loading="lazy"
           />
         </a>
         <PostTitleWrapper>

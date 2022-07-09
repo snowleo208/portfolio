@@ -69,7 +69,7 @@ function About() {
         </div>
 
         <ImageWrapper>
-          <AboutImage src={image} alt="" />
+          <AboutImage loading="lazy" src={image} alt="" />
         </ImageWrapper>
       </AboutGrid>
     </>

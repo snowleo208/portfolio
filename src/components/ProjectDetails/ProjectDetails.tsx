@@ -52,7 +52,7 @@ export function ProjectDetails() {
         {ele.gallery
           ? ele.gallery.map((item, idx) => (
             <a target="_blank" rel="noopener noreferrer" href={item} key={idx}>
-              <ThumbnailImage src={item} alt="" />
+              <ThumbnailImage loading="lazy" src={item} alt="" />
             </a>
           ))
           : ''}

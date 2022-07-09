@@ -39,8 +39,7 @@ export function Contact() {
           <h1>{translate.contactHeader}</h1>
           <p>{translate.contactText}</p>
         </div>
-        <StyledForm
-          className={showThankyou ? 'c-form u-hide' : 'c-form'}
+        {!showThankyou && (<StyledForm
           id="form"
           method="POST"
           onSubmit={handleSubmit(onSubmit)}
@@ -89,7 +88,7 @@ export function Contact() {
             value="Submit"
             name="submit"
           />
-        </StyledForm>
+        </StyledForm>)}
         {showThankyou && (
         <div
           aria-hidden={showThankyou ? 'false' : 'true'}
