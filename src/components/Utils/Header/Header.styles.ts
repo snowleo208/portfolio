@@ -14,11 +14,13 @@ export const StyledHeader = styled('section', {
     transition: "ease 400ms",
     backgrounPosition: "30% 0%",
     "@media only screen and (min-width : 768px)": {
+        backgroundImage: `url(${bgImage})`,
         backgroundPosition: "10% 30%",
         height: "50vh",
         minHeight: "28em"
     },
     "@media only screen and (min-width : 992px)": {
+        backgroundImage: `url(${bgImage})`,
         height: "70vh",
         backgroundPosition:  "10% 60%",
         minHeight: "35rem"
