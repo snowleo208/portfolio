@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyledHeader, HeaderWrapper, Banner, HeaderText, Link } from './Header.styles'
-import Menu from '../../Menu';
+import {Menu} from '../../Menu/Menu';
 import translate from '../../portfolio';
 
 export const Header = () => (

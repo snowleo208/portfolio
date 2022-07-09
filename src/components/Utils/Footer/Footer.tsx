@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledFooter, StyledFooterWrapper, Text, Link, Icon } from './Footer.styles';
+import { StyledFooter, StyledFooterWrapper, Text, Link, Icon, TextLink } from './Footer.styles';
 import translate from '../../portfolio';
 import Sprite from '../../../assets/icon-sprite.svg';
 
@@ -27,13 +27,13 @@ export const Footer = () => (
         </StyledFooterWrapper>
         <Text>
           {new Date().getFullYear()} © Code by Yuki Cheung. Design by{' '}
-          <Link
+          <TextLink
             href="https://dribbble.com/shots/3782221-Free-PSD-Portfolio-Template"
             target="_blank"
             rel="noreferrer noopener"
           >
             Svetlana
-          </Link>
+          </TextLink>
         </Text>
       </StyledFooter>
 )

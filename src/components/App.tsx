@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useLayoutEffect} from 'react';
+import { useLocation, useMatch } from 'react-router-dom';
 import { styled, globalCss } from '@stitches/react';
 import { Routes, Route } from 'react-router-dom';
+import {Menu} from './Menu/Menu';
 import Home from './Page/Home';
 import About from './Page/About';
 import ProjectPage from './Page/ProjectPage';
 import ContactPage from './Page/ContactPage';
-import ProjectDetails from './ProjectDetails';
+import {ProjectDetails} from './ProjectDetails';
 import {Footer} from './Utils/Footer';
-import Menu from './Menu';
 
 const AppContainer = styled('div', {
   display: "flex",
@@ -49,13 +50,13 @@ const globalStyles = globalCss({
     lineHeight: 1.48,
     color: "rgb(95, 95, 95)"
   },
+  "a": {
+      textDecoration: "none"
+  },
   "h1,h2,h3,h4,h5,h6": {
     fontFamily: "'Montserrat', sans-serif",
     fontWeight: 500,
     color: "rgb(23, 23, 23)"
-  },
-  "a": {
-    textDecoration: "none"
   },
   "h1": {
     fontSize: "2em",
@@ -72,11 +73,20 @@ const globalStyles = globalCss({
 });
 
 const App = () => {
+  const location = useLocation();
+  const isHomepage = useMatch('/');
+  const isProjectDetailsPage = useMatch('/project/:url');
+  const isFullWidth = isHomepage || isProjectDetailsPage;
+  
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   globalStyles();
   return  (
     <AppContainer>
-      {window.location.pathname !== '/' &&<Menu />}
-      <Layout layout={window.location.pathname === '/' ? undefined : 'default'}>
+      {!isHomepage &&<Menu />}
+      <Layout layout={isFullWidth ?  undefined : 'default'}>
         <Routes>
         <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

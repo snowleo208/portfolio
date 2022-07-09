@@ -8,7 +8,7 @@ export const Project = () => {
   const itemList = list.map(item => (
       <ProjectItem
         style={{
-          backgroundImage: `url(https://yukicheung.atrera.com/assets/projects/${item.urlKey}.jpg)`,
+          backgroundImage: `url(${item?.bg})`,
         }}
       >
         <Link to={`/project/${item.urlKey}`}>

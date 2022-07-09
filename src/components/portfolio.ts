@@ -1,3 +1,39 @@
+import ryugakuFair1 from '../assets/projects/gallery/xl/ryugaku-fair_1.jpg';
+import ryugakuFair2 from '../assets/projects/gallery/xl/ryugaku-fair_2.jpg';
+import ryugakuFair3 from '../assets/projects/gallery/xl/ryugaku-fair_3.jpg';
+import ryugakuFair4 from '../assets/projects/gallery/xl/ryugaku-fair_4.jpg';
+import ryugakuFairBG from '../assets/projects/bg/ryugaku-fair.jpg';
+
+import uniquizBG from '../assets/projects/bg/uniquiz.jpg';
+import uniquiz1 from '../assets/projects/gallery/xl/uniquiz_1.jpg';
+import uniquiz2 from '../assets/projects/gallery/xl/uniquiz_2.jpg';
+import uniquiz3 from '../assets/projects/gallery/xl/uniquiz_3.jpg';
+import uniquiz4 from '../assets/projects/gallery/xl/uniquiz_4.jpg';
+
+import internshipBG from '../assets/projects/bg/internship.jpg';
+import internship1 from '../assets/projects/gallery/xl/internship_1.jpg';
+import internship2 from '../assets/projects/gallery/xl/internship_2.jpg';
+import internship3 from '../assets/projects/gallery/xl/internship_3.jpg';
+import internship4 from '../assets/projects/gallery/xl/internship_4.jpg';
+
+import weLoveLanguagesBG from '../assets/projects/bg/we-love-languages.jpg';
+import weLoveLanguages1 from '../assets/projects/gallery/xl/we-love-languages_1.jpg';
+import weLoveLanguages2 from '../assets/projects/gallery/xl/we-love-languages_2.jpg';
+import weLoveLanguages3 from '../assets/projects/gallery/xl/we-love-languages_3.jpg';
+import weLoveLanguages4 from '../assets/projects/gallery/xl/we-love-languages_4.jpg';
+
+import accentQuizBG from '../assets/projects/bg/accent-quiz.jpg';
+import accentQuiz1 from '../assets/projects/gallery/xl/accent-quiz_1.jpg';
+import accentQuiz2 from '../assets/projects/gallery/xl/accent-quiz_2.jpg';
+import accentQuiz3 from '../assets/projects/gallery/xl/accent-quiz_3.jpg';
+import accentQuiz4 from '../assets/projects/gallery/xl/accent-quiz_4.jpg';
+
+import hotDealsBG from '../assets/projects/bg/hot-deals.jpg';
+import hotDeals1 from '../assets/projects/gallery/xl/hot-deals_1.jpg';
+import hotDeals2 from '../assets/projects/gallery/xl/hot-deals_2.jpg';
+import hotDeals3 from '../assets/projects/gallery/xl/hot-deals_3.jpg';
+import hotDeals4 from '../assets/projects/gallery/xl/hot-deals_4.jpg';
+
 export default {
     "header": "Grow and Develop",
     "headerText": "A front-end web developer. Created professional landing pages and websites for serveral companies, mainly focused on React, styled components and Jest/Jasmine. Love to write when having free time.",
@@ -25,8 +61,10 @@ export default {
             "techDesc": "The main technologies are Gatsby/React, SASS/CSS.",
             "client": "EF Education First (Japan)",
             "date": "Aug, 2019",
-            "gallery": ["ryugaku-fair_1.jpg", "ryugaku-fair_2.jpg", "ryugaku-fair_3.jpg", "ryugaku-fair_4.jpg"]
-        }, {
+            "bg": ryugakuFairBG,
+            "gallery": [ryugakuFair1, ryugakuFair2, ryugakuFair3, ryugakuFair4]
+        },
+        {
             "id": 1,
             "urlKey": "uniquiz",
             "category": "commercial",
@@ -36,10 +74,11 @@ export default {
             "techDesc": "The main technologies are React and React hook/router, SASS/CSS. Using react-testing-library for unit testing.",
             "client": "EF Education First (Asia)",
             "date": "July, 2019",
-            "gallery": ["uniquiz_1.jpg", "uniquiz_2.jpg", "uniquiz_3.jpg", "uniquiz_4.jpg"]
+            "bg": uniquizBG,
+            "gallery": [uniquiz1, uniquiz2, uniquiz3, uniquiz4]
         },
         {
-            "id": 3,
+            "id": 2,
             "category": "commercial",
             "urlKey": "internship",
             "name": "EF International Internship & Volunteer Programs",
@@ -48,10 +87,11 @@ export default {
             "techDesc": "The main technologies are HTML, CSS, Javascript",
             "client": "EF Education First (Hong Kong)",
             "date": "Feb, 2019",
-            "gallery": ["internship_1.jpg", "internship_2.jpg", "internship_3.jpg", "internship_4.jpg"]
+            "bg": internshipBG,
+            "gallery": [internship1, internship2, internship3, internship4]
         },
         {
-            "id": 4,
+            "id": 3,
             "category": "commercial",
             "urlKey": "we-love-languages",
             "name": "We Love Languages",
@@ -60,10 +100,11 @@ export default {
             "techDesc": "The main technologies are React, SASS/CSS and webpack.",
             "client": "EF Education First (Japan)",
             "date": "November, 2018",
-            "gallery": ["we-love-languages_1.jpg", "we-love-languages_2.jpg", "we-love-languages_3.jpg", "we-love-languages_4.jpg"]
+            "bg": weLoveLanguagesBG,
+            "gallery": [weLoveLanguages1, weLoveLanguages2, weLoveLanguages3, weLoveLanguages4]
         },
         {
-            "id": 5,
+            "id": 4,
             "category": "commercial",
             "urlKey": "accent-quiz",
             "name": "Accent Quiz",
@@ -72,10 +113,11 @@ export default {
             "techDesc": "The main technologies are React, SASS/CSS, with WeChat SDK for customizing share content.",
             "client": "EF Education First China",
             "date": "October, 2018",
-            "gallery": ["accent-quiz_1.jpg", "accent-quiz_2.jpg", "accent-quiz_3.jpg", "accent-quiz_4.jpg"]
+            "bg": accentQuizBG,
+            "gallery": [accentQuiz1, accentQuiz2, accentQuiz3, accentQuiz4]
         },
         {
-            "id": 6,
+            "id": 5,
             "category": "commercial",
             "urlKey": "hot-deals",
             "name": "EF Hot Deals",
@@ -84,7 +126,8 @@ export default {
             "techDesc": "The main technologies are HTML/Pug, SASS/CSS and Javascript.",
             "client": "EF Education First Japan",
             "date": "December, 2018",
-            "gallery": ["hot-deals_1.jpg", "hot-deals_2.jpg", "hot-deals_3.jpg", "hot-deals_4.jpg"]
+            "bg": hotDealsBG,
+            "gallery": [hotDeals1, hotDeals2, hotDeals3, hotDeals4]
         },
     ],
     "contactHeader": "Contact Me",

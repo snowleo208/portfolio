@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import translate from './portfolio';
+import translate from '../portfolio';
 import { BlogHeader, BlogGrid, BlogPost, PostComponent, PostImage, PostTitle, PostTitleWrapper, PostDate } from './Blog.styles';
 
 type Post = {
@@ -15,7 +15,7 @@ type Post = {
   created_at: string;
 }
 
-const Blog = () => {
+export const Blog = () => {
     const [post, setPost] = useState<Post[]>([]);
     const fetchRss = () => fetch('https://dev.to/api/articles/latest?username=snowleo208', {
       mode: 'cors',
@@ -56,5 +56,3 @@ const Blog = () => {
         </BlogGrid>
       );
 }
-
-export default Blog;

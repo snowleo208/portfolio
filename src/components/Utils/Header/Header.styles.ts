@@ -52,6 +52,7 @@ export const Link = styled('a', {
     textDecoration: "none",
     "&:hover": {
         backgroundColor: "rgb(37, 37, 37)",
+        color: "white",
     }
 });
 

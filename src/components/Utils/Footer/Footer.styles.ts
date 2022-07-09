@@ -33,3 +33,13 @@ export const Icon = styled('svg', {
     }
 });
 
+
+export const TextLink = styled('a', {
+    textDecoration: "none",
+    display: "inline",
+    color: "rgb(95, 95, 95)",
+    transition: "ease 400ms",
+    "&:hover, &:focus": {
+      color: "rgb(23, 23, 23)"
+    }
+});
