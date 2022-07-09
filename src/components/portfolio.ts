@@ -1,4 +1,4 @@
-{
+export default {
     "header": "Grow and Develop",
     "headerText": "A front-end web developer. Created professional landing pages and websites for serveral companies, mainly focused on React, styled components and Jest/Jasmine. Love to write when having free time.",
     "aboutHeader": "I am Yuki Cheung",
