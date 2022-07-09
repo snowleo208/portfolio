@@ -1,9 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import translate from '../portfolio';
+import Menu from '../Menu';
+import { AboutGrid, AboutImage, ImageWrapper, Text, Skill } from './About.styles';
+import { Link } from '../Utils/Header/Header.styles';
 import image from '../../assets/about_01_m.jpg';
-
-// import Menu from '../Menu';
 
 const About = () => {
   const category = Object.keys(translate.skills);
@@ -21,36 +22,37 @@ const About = () => {
     <Helmet>
             <title>About | Yuki Cheung</title>
       </Helmet>
-      <section className="c-about u-section-padding u-section-margin">
-            <div className="c-about-desc">
+      <Menu />
+      <AboutGrid>
+            <div>
               <h1>{translate.headerButton}</h1>
-              <p>{translate.aboutDesc}</p>
-              <p>{translate.aboutDesc1}</p>
+              <Text>{translate.aboutDesc}</Text>
+              <Text>{translate.aboutDesc1}</Text>
   
               {/* <div className="c-about-profile">{profileIcons}</div> */}
   
-              <div className="c-about-skills">
+              <div>
                 <h2>Skills</h2>
                 {category.map(item => {
                   return (
-                    <p key={item}>
-                      <span className="c-about-skills__title">{item}</span>:{' '}
+                    <Text key={item}>
+                      <Skill>{item}</Skill>:{' '}
                       {createList(item as keyof typeof translate.skills)}
-                    </p>
+                    </Text>
                   );
                 })}
               </div>
   
-              <a
-                className="c-about-cta"
+              <Link
                 href="/contact"
-              />
+              >{translate.aboutButton}
+              </Link>
             </div>
   
-            <div className="c-about-img fade-in">
-              <img src={image} alt="" />
-            </div>
-          </section>
+          <ImageWrapper>
+            <AboutImage src={image} alt="" />
+            </ImageWrapper>
+          </AboutGrid>
     </>
   );
 }
