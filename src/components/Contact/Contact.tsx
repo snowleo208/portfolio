@@ -14,8 +14,6 @@ export function Contact() {
       throw Error('Submit Error');
     }
 
-    console.log(data, JSON.stringify(data));
-
     return fetch('https://formspree.io/mzbkpjdj', {
       method: 'POST',
       mode: 'cors',
@@ -25,7 +23,6 @@ export function Contact() {
       body: JSON.stringify(data),
     })
       .then((res) => {
-        console.log(res);
         if (res.status === 200) {
           setShowThankYou(true);
         }
