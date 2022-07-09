@@ -4,11 +4,14 @@ import {
 } from './Header.styles';
 import { Menu } from '../../Menu/Menu';
 import translate from '../../portfolio';
+import bgImage from '../../../assets/top.jpg';
 
 export function Header() {
   return (
     <header>
-      <StyledHeader>
+      <StyledHeader style={{
+          backgroundImage: `url(${bgImage})`,
+        }}>
         <Menu />
         <Banner>
           <HeaderWrapper>

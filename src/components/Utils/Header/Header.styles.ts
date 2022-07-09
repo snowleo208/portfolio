@@ -1,6 +1,5 @@
 import { styled } from '@stitches/react';
 import {Link} from 'react-router-dom';
-import bgImage from '../../../assets/top.jpg';
 
 export const StyledHeader = styled('section', {
     position: "relative",
@@ -8,20 +7,17 @@ export const StyledHeader = styled('section', {
     flexDirection: "column",
     justifyContent: "center",
     alignContent: "center",
-    backgroundImage: `url(${bgImage})`,
     backgroundSize: "cover",
     height: "100vh",
     maxHeight: "50rem",
     transition: "ease 400ms",
     backgrounPosition: "30% 0%",
     "@media only screen and (min-width : 768px)": {
-        backgroundImage: `url(${bgImage})`,
         backgroundPosition: "10% 30%",
         height: "50vh",
         minHeight: "28em"
     },
     "@media only screen and (min-width : 992px)": {
-        backgroundImage: `url(${bgImage})`,
         height: "70vh",
         backgroundPosition:  "10% 60%",
         minHeight: "35rem"
