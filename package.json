@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "My portfolio of web development",
-  "main": "src/index.js",
+  "main": "src/index.html",
   "scripts": {
     "start": "npm run dev",
     "dev": "cross-env NODE_ENV=development parcel src/index.html --open",
