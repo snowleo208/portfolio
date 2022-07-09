@@ -72,6 +72,12 @@ const globalStyles = globalCss({
     fontSize: '1.17em',
     margin: '0 0 0.83em 0',
   },
+  "@media (prefers-reduced-motion: reduce)": {
+    "*": {
+      animation: "none !important",
+      transition: "none !important"
+    }
+  }
 });
 
 function App() {
