@@ -4,7 +4,8 @@ import {Header} from '../Utils/Header';
 import Project from '../Project';
 import Blog from '../Blog';
 import {Logo} from '../Logo';
-import Contact from '../Contact';
+import {Contact} from '../Contact';
+import { Layout } from '../App';
 
 const Home = () => (
   <div>
@@ -15,7 +16,9 @@ const Home = () => (
         <Project />
         <Logo />
         <Blog />
-        <Contact />
+        <Layout layout="default">
+          <Contact />
+        </Layout>
       </div>
 )
 

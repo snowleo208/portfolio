@@ -1,13 +1,31 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import translate from '../portfolio';
-import Menu from '../Menu';
-import { AboutGrid, AboutImage, ImageWrapper, Text, Skill } from './About.styles';
+import { AboutGrid, AboutImage, ImageWrapper, Text, Skill,IconContainer, Icon } from './About.styles';
 import { Link } from '../Utils/Header/Header.styles';
 import image from '../../assets/about_01_m.jpg';
+import Sprite from '../../assets/icon-sprite.svg';
 
 const About = () => {
   const category = Object.keys(translate.skills);
+  const profileIcons = translate.footer.map(item => (
+    <a
+      href={item.url}
+      key={item.id}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Icon
+        className="c-footer-icon"
+        aria-labelledby="title"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <title>{item.id}</title>
+        <use href={`${Sprite}#${item.id}`} />
+      </Icon>
+    </a>
+  ));
   const createList = (list: keyof typeof translate.skills) => {
     let html = '';
     translate.skills[list].map((item, idx) => {
@@ -22,14 +40,13 @@ const About = () => {
     <Helmet>
             <title>About | Yuki Cheung</title>
       </Helmet>
-      <Menu />
       <AboutGrid>
             <div>
               <h1>{translate.headerButton}</h1>
               <Text>{translate.aboutDesc}</Text>
               <Text>{translate.aboutDesc1}</Text>
   
-              {/* <div className="c-about-profile">{profileIcons}</div> */}
+              <IconContainer>{profileIcons}</IconContainer>
   
               <div>
                 <h2>Skills</h2>

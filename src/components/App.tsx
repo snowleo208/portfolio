@@ -7,11 +7,30 @@ import ProjectPage from './Page/ProjectPage';
 import ContactPage from './Page/ContactPage';
 import ProjectDetails from './ProjectDetails';
 import {Footer} from './Utils/Footer';
+import Menu from './Menu';
 
 const AppContainer = styled('div', {
   display: "flex",
   flexDirection: "column",
   minHeight: "100vh"
+});
+
+export const Layout = styled('div', {
+  variants: {
+    layout: {
+      default: {
+        padding: '0 1rem',
+        "@media only screen and (min-width : 992px)": {
+            maxWidth: 1140,
+            margin: '0 auto',
+            padding: "4em 1em"
+        }
+      }
+    },
+    homepage: {
+      
+    }
+  }
 });
 
 const globalStyles = globalCss({
@@ -53,13 +72,16 @@ const App = () => {
   globalStyles();
   return  (
     <AppContainer>
-      <Routes>
-      <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/project" element={<ProjectPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/project/:url" element={<ProjectDetails />} />
-      </Routes>
+      {window.location.pathname !== '/' &&<Menu />}
+      <Layout layout={window.location.pathname === '/' ? undefined : 'default'}>
+        <Routes>
+        <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/project" element={<ProjectPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/project/:url" element={<ProjectDetails />} />
+        </Routes>
+      </Layout>
       <Footer />
     </AppContainer>
   );

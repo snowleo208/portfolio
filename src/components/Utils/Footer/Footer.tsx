@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyledFooter, StyledFooterWrapper, Text, Link, Icon } from './Footer.styles';
 import translate from '../../portfolio';
+import Sprite from '../../../assets/icon-sprite.svg';
 
 export const Footer = () => (
   <StyledFooter>
@@ -19,7 +20,7 @@ export const Footer = () => (
                 preserveAspectRatio="xMidYMid meet"
               >
                 <title>{item.id}</title>
-                <use href={`https://yukicheung.atrera.com/assets/icon-sprite.svg#${item.id}`} />
+                <use href={`${Sprite}#${item.id}`} />
               </Icon>
             </Link>
           ))}
