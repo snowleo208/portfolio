@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  StyledHeader, HeaderWrapper, Banner, HeaderText, Link,
+  StyledHeader, HeaderWrapper, Banner, HeaderText, ButtonLink,
 } from './Header.styles';
 import { Menu } from '../../Menu/Menu';
 import translate from '../../portfolio';
@@ -14,7 +14,7 @@ export function Header() {
           <HeaderWrapper>
             <h1>{translate.header}</h1>
             <HeaderText>{translate.headerText}</HeaderText>
-            <Link href="/about">{translate.headerButton}</Link>
+            <ButtonLink to="/about">{translate.headerButton}</ButtonLink>
           </HeaderWrapper>
         </Banner>
       </StyledHeader>

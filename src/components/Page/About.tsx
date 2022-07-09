@@ -4,7 +4,7 @@ import translate from '../portfolio';
 import {
   AboutGrid, AboutImage, ImageWrapper, Text, Skill, IconContainer, Icon,
 } from './About.styles';
-import { Link } from '../Utils/Header/Header.styles';
+import { ButtonLink } from '../Utils/Header/Header.styles';
 import image from '../../assets/about_01_m.jpg';
 import Sprite from '../../assets/icon-sprite.svg';
 
@@ -61,11 +61,11 @@ function About() {
             ))}
           </div>
 
-          <Link
-            href="/contact"
+          <ButtonLink
+            to="/contact"
           >
             {translate.aboutButton}
-          </Link>
+          </ButtonLink>
         </div>
 
         <ImageWrapper>

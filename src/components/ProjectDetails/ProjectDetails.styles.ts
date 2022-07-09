@@ -30,6 +30,25 @@ export const Box = styled('div', {
     paddingBottom: "1rem"
 });
 
+export const ButtonLink = styled('a', {
+    display: "inline-block",
+    width: "auto",
+    fontFamily: "'Montserrat',Helvetica,Arial,sans-serif",
+    fontWeight: 500,
+    backgroundColor: "rgb(16, 201, 195)",
+    padding: "0.8em 1.6em",
+    color: "white",
+    border: 0,
+    cursor: "pointer",
+    margin: "0.5em 0",
+    transition: "ease 400ms",
+    textDecoration: "none",
+    "&:hover": {
+        backgroundColor: "rgb(37, 37, 37)",
+        color: "white",
+    }
+});
+
 export const TextLinkWrapper = styled('section', {
     padding: "1rem"
 });

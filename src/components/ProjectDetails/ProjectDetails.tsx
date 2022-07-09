@@ -2,9 +2,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
 import translate from '../portfolio';
-import { Link } from '../Utils/Header/Header.styles';
 import {
-  TextLink, ProjectContainer, HeroImage, LinkWrapper, Text, ImageGallery, ThumbnailImage, Box, TextLinkWrapper,
+  TextLink, ProjectContainer, HeroImage, LinkWrapper, Text, ImageGallery, ThumbnailImage, Box, TextLinkWrapper, ButtonLink
 } from './ProjectDetails.styles';
 
 export function ProjectDetails() {
@@ -45,7 +44,7 @@ export function ProjectDetails() {
       </Box>
 
       <LinkWrapper>
-        <Link href={ele.link} target="_blank" rel="noopener noreferrer">Live site</Link>
+        <ButtonLink href={ele.link} target="_blank" rel="noopener noreferrer">Live site</ButtonLink>
       </LinkWrapper>
 
       <ImageGallery>

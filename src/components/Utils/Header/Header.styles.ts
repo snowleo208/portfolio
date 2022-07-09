@@ -1,5 +1,6 @@
 import { styled } from '@stitches/react';
-import bgImage from '../../../assets/WPIMGL2752_TP_V.jpg';
+import {Link} from 'react-router-dom';
+import bgImage from '../../../assets/top.jpg';
 
 export const StyledHeader = styled('section', {
     position: "relative",
@@ -39,7 +40,7 @@ export const Banner = styled('div', {
     }
 });
 
-export const Link = styled('a', {
+export const ButtonLink = styled(Link, {
     display: "inline-block",
     width: "auto",
     fontFamily: "'Montserrat',Helvetica,Arial,sans-serif",
