@@ -1,18 +1,17 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import {Contact} from '../Contact';
+import { Contact } from '../Contact';
 
-const ContactPage = () => {
-
+function ContactPage() {
   return (
     <>
-        <Helmet>
-          <title>Contact | Yuki Cheung</title>
-        </Helmet>
+      <Helmet>
+        <title>Contact | Yuki Cheung</title>
+      </Helmet>
       <Contact />
     </>
-  )
+  );
 }
 
 export default ContactPage;

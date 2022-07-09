@@ -1,14 +1,16 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import translate from '../portfolio';
-import { AboutGrid, AboutImage, ImageWrapper, Text, Skill,IconContainer, Icon } from './About.styles';
+import {
+  AboutGrid, AboutImage, ImageWrapper, Text, Skill, IconContainer, Icon,
+} from './About.styles';
 import { Link } from '../Utils/Header/Header.styles';
 import image from '../../assets/about_01_m.jpg';
 import Sprite from '../../assets/icon-sprite.svg';
 
-const About = () => {
+function About() {
   const category = Object.keys(translate.skills);
-  const profileIcons = translate.footer.map(item => (
+  const profileIcons = translate.footer.map((item) => (
     <a
       href={item.url}
       key={item.id}
@@ -37,39 +39,40 @@ const About = () => {
   };
   return (
     <>
-    <Helmet>
-            <title>About | Yuki Cheung</title>
+      <Helmet>
+        <title>About | Yuki Cheung</title>
       </Helmet>
       <AboutGrid>
-            <div>
-              <h1>{translate.headerButton}</h1>
-              <Text>{translate.aboutDesc}</Text>
-              <Text>{translate.aboutDesc1}</Text>
-  
-              <IconContainer>{profileIcons}</IconContainer>
-  
-              <div>
-                <h2>Skills</h2>
-                {category.map(item => {
-                  return (
-                    <Text key={item}>
-                      <Skill>{item}</Skill>:{' '}
-                      {createList(item as keyof typeof translate.skills)}
-                    </Text>
-                  );
-                })}
-              </div>
-  
-              <Link
-                href="/contact"
-              >{translate.aboutButton}
-              </Link>
-            </div>
-  
-          <ImageWrapper>
-            <AboutImage src={image} alt="" />
-            </ImageWrapper>
-          </AboutGrid>
+        <div>
+          <h1>{translate.headerButton}</h1>
+          <Text>{translate.aboutDesc}</Text>
+          <Text>{translate.aboutDesc1}</Text>
+
+          <IconContainer>{profileIcons}</IconContainer>
+
+          <div>
+            <h2>Skills</h2>
+            {category.map((item) => (
+              <Text key={item}>
+                <Skill>{item}</Skill>
+                :
+                {' '}
+                {createList(item as keyof typeof translate.skills)}
+              </Text>
+            ))}
+          </div>
+
+          <Link
+            href="/contact"
+          >
+            {translate.aboutButton}
+          </Link>
+        </div>
+
+        <ImageWrapper>
+          <AboutImage src={image} alt="" />
+        </ImageWrapper>
+      </AboutGrid>
     </>
   );
 }
