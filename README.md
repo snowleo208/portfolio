@@ -1,6 +1,8 @@
 # Portfolio
 
-This is my portfolio website made by React, HTML and SASS/CSS, bundled by webpack with customised config file.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/124b545a-4f90-41dc-bd78-a49a176e0b6b/deploy-status)](https://app.netlify.com/sites/yukicheung-portfolio/deploys)
+
+Personal portfolio website made by React, Typescript and styled component, bundled by Parcel.
 
 ## Usage
 
