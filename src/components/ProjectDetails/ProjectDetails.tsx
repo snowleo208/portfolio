@@ -14,7 +14,7 @@ export function ProjectDetails() {
   );
 
   const projectItem = project.map((ele) => (
-    <section className="c-details-item u-section-padding" key={ele.urlKey}>
+    <section key={ele.urlKey}>
       <Helmet>
         <title>
           {ele.name}

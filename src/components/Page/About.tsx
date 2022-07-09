@@ -18,7 +18,6 @@ function About() {
       rel="noopener noreferrer"
     >
       <Icon
-        className="c-footer-icon"
         aria-labelledby="title"
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="xMidYMid meet"
