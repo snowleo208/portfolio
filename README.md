@@ -6,13 +6,13 @@ Personal portfolio website made by React, Typescript and styled component, bundl
 
 ## Usage
 
-This project is using `yarn`, to run it in your local machine, you have to clone this repo to your local machine and run `yarn` first.
+This project is using `pnpm`, to run it in your local machine, you have to clone this repo to your local machine and run `pnpm` first.
 
 To run the project:
-`yarn start`
+`pnpm start`
 
 To build the project:
-`yarn build`
+`pnpm build`
 
 ## Live site
 
