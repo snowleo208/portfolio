@@ -28,6 +28,18 @@ export const PostComponent = styled('div', {
     backgroundColor: "white",
     width: "100%",
     height: "100%",
+    transitionProperty: 'box-shadow',
+    transitionDuration: '150ms',
+    transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+    borderRadius: '0.5rem',
+    overflow: 'hidden',
+    color: 'rgb(95, 95, 95)',
+    '&:hover': {
+        boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)'
+    },
+    '&:visited': {
+        color: 'rgb(95, 95, 95)',
+    }
 });
 
 export const PostTitleWrapper = styled('div', {
@@ -40,9 +52,6 @@ export const PostTitle = styled('h3', {
     transition: "ease 400ms",
     fontSize: "1.05em",
     textDecoration: "none",
-    "&:hover": {
-        color: "rgb(95, 95, 95)"
-    },
     "@media only screen and (min-width : 992px)": {
         fontSize: "1.17em",
     }
@@ -51,7 +60,8 @@ export const PostTitle = styled('h3', {
 export const PostImage = styled('img', {
     display: "block",
     width: "100%",
-    transition: "ease 400ms"
+    transition: "ease 400ms",
+    aspectRatio: '16 / 9'
 });
 
 export const PostDate = styled('p', {
