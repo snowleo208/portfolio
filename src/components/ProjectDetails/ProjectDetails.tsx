@@ -30,15 +30,15 @@ export function ProjectDetails() {
 
       <Box>
         <p>
-          Client:
+          <strong>Client:{" "}</strong>
           {ele.client}
         </p>
         <p>
-          Date:
+          <strong>Date:{" "}</strong>
           {ele.date}
         </p>
         <p>
-          Category:
+          <strong>Category:{" "}</strong>
           {ele.category}
         </p>
       </Box>

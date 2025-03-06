@@ -28,11 +28,11 @@ import accentQuiz2 from '../assets/projects/gallery/xl/accent-quiz_2.jpg';
 import accentQuiz3 from '../assets/projects/gallery/xl/accent-quiz_3.jpg';
 import accentQuiz4 from '../assets/projects/gallery/xl/accent-quiz_4.jpg';
 
-import hotDealsBG from '../assets/projects/bg/hot-deals.jpg';
-import hotDeals1 from '../assets/projects/gallery/xl/hot-deals_1.jpg';
-import hotDeals2 from '../assets/projects/gallery/xl/hot-deals_2.jpg';
-import hotDeals3 from '../assets/projects/gallery/xl/hot-deals_3.jpg';
-import hotDeals4 from '../assets/projects/gallery/xl/hot-deals_4.jpg';
+import zooplaDashboardBg from '../assets/projects/bg/zoopla-dashboard.jpg';
+import zooplaDashboard1 from '../assets/projects/gallery/xl/zoopla-dashboard_1.jpg';
+import zooplaDashboard2 from '../assets/projects/gallery/xl/zoopla-dashboard_2.jpg';
+import zooplaDashboard3 from '../assets/projects/gallery/xl/zoopla-dashboard_3.jpg';
+import zooplaDashboard4 from '../assets/projects/gallery/xl/zoopla-dashboard_4.jpg';
 
 export default {
     "header": "Grow and Develop",
@@ -51,8 +51,22 @@ export default {
     "projectsTitle": ["all", "side projects"],
     "brandList": ["zoopla", "ef", "dbs"],
     "blogTitle": "Recent Articles",
-    "projects": [{
-            "id": 0,
+    "projects": [
+        {
+            "id": 1,
+            "urlKey": "zoopla-account-dashboard",
+            "category": "commercial",
+            "name": "My Zoopla – Account Page Revamp",
+            "link": "https://www.zoopla.co.uk/my-zoopla/",
+            "desc": "This project was a complete overhaul of the existing Zoopla account page, improving both functionality and user experience. Revamped all key sections of the account page, including Tracked Properties, Saved Searches, Saved Listings, and more. Previously, these sections had inconsistent styles, and they were now unified with a modern, cohesive design.",
+            "techDesc": "Developed the account page with Next.js, React, GraphQL, Cypress, Jest, and other modern technologies.",
+            "client": "Zoopla (London, United Kingdom)",
+            "date": "2023",
+            "bg": zooplaDashboardBg,
+            "gallery": [zooplaDashboard1, zooplaDashboard2, zooplaDashboard3, zooplaDashboard4]
+        },
+        {
+            "id": 2,
             "urlKey": "ryugaku-fair",
             "category": "commercial",
             "name": "Ryugaku Fair",
@@ -65,7 +79,7 @@ export default {
             "gallery": [ryugakuFair1, ryugakuFair2, ryugakuFair3, ryugakuFair4]
         },
         {
-            "id": 1,
+            "id": 3,
             "urlKey": "uniquiz",
             "category": "commercial",
             "name": "Uniquiz - a quiz template",
@@ -78,7 +92,7 @@ export default {
             "gallery": [uniquiz1, uniquiz2, uniquiz3, uniquiz4]
         },
         {
-            "id": 2,
+            "id": 4,
             "category": "commercial",
             "urlKey": "internship",
             "name": "EF International Internship & Volunteer Programs",
@@ -91,7 +105,7 @@ export default {
             "gallery": [internship1, internship2, internship3, internship4]
         },
         {
-            "id": 3,
+            "id": 5,
             "category": "commercial",
             "urlKey": "we-love-languages",
             "name": "We Love Languages",
@@ -104,45 +118,32 @@ export default {
             "gallery": [weLoveLanguages1, weLoveLanguages2, weLoveLanguages3, weLoveLanguages4]
         },
         {
-            "id": 4,
+            "id": 6,
             "category": "commercial",
             "urlKey": "accent-quiz",
             "name": "Accent Quiz",
             "link": "https://liuxue.ef.com.cn/hub/asia/accent-quiz",
             "desc": "This is a campaign page developed for EF China, for boosting leads and awareness of EF China. Through this quiz, the user can hear and answer questions of different accents. In the end, they can know their scores.",
             "techDesc": "The main technologies are React, SASS/CSS, with WeChat SDK for customizing share content.",
-            "client": "EF Education First China",
-            "date": "October, 2018",
+            "Client": "EF Education First China",
+            "Date": "October, 2018",
             "bg": accentQuizBG,
             "gallery": [accentQuiz1, accentQuiz2, accentQuiz3, accentQuiz4]
-        },
-        {
-            "id": 5,
-            "category": "commercial",
-            "urlKey": "hot-deals",
-            "name": "EF Hot Deals",
-            "link": "https://www.ef.com.hk/hub/asia/hot-deals",
-            "desc": "This is a promotion page developed for EF Asia, for boosting sales of EF Asia offices, included EF Japan, Hong Kong, Indonesia, South Korea, Thailand, Vietnam. Staff can switch to a different theme, e.g. Christmas to show different design.",
-            "techDesc": "The main technologies are HTML/Pug, SASS/CSS and Javascript.",
-            "client": "EF Education First Japan",
-            "date": "December, 2018",
-            "bg": hotDealsBG,
-            "gallery": [hotDeals1, hotDeals2, hotDeals3, hotDeals4]
-        },
+        }
     ],
     "contactHeader": "Contact Me",
     "contactText": "Need a project? Feel free to contact me and let me know what you need. Everything would be tailor-made and suit your needs.",
     "footer": [{
-            "id": "github",
-            "url": "https://github.com/snowleo208"
-        },
-        {
-            "id": "codepen",
-            "url": "https://codepen.io/snowleo208/"
-        },
-        {
-            "id": "dev-dot-to",
-            "url": "https://dev.to/snowleo208/"
-        }
+        "id": "github",
+        "url": "https://github.com/snowleo208"
+    },
+    {
+        "id": "codepen",
+        "url": "https://codepen.io/snowleo208/"
+    },
+    {
+        "id": "dev-dot-to",
+        "url": "https://dev.to/snowleo208/"
+    }
     ]
 }
