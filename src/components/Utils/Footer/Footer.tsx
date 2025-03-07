@@ -28,9 +28,9 @@ export function Footer() {
         ))}
       </StyledFooterWrapper>
       <Text>
-        {new Date().getFullYear()}
+        2018 - {new Date().getFullYear()}
         {' '}
-        © Code by Yuki Cheung. Design by
+        © All contents owned by Yuki Cheung. Design by
         {' '}
         <TextLink
           href="https://dribbble.com/shots/3782221-Free-PSD-Portfolio-Template"

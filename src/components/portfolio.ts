@@ -130,7 +130,7 @@ export default {
         }
     ],
     "contactHeader": "Contact Me",
-    "contactText": "Need a project? Feel free to contact me and let me know what you need. Everything would be tailor-made and suit your needs.",
+    "contactText": "Interested in working together? Reach out and let me know how I can help!",
     "footer": [{
         "id": "github",
         "url": "https://github.com/snowleo208"
