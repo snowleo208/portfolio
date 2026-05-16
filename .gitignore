@@ -3,3 +3,5 @@ dist/
 env.json
 .parcel-cache
 .*
+!.github/
+!.github/**
