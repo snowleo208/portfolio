@@ -1,7 +1,7 @@
 import React, { useLayoutEffect } from 'react';
 import {
   useLocation, useMatch, Routes, Route,
-} from 'react-router-dom';
+} from 'react-router';
 import { styled, globalCss } from '@stitches/react';
 
 import { Menu } from './Menu/Menu';

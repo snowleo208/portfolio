@@ -3,29 +3,34 @@ import {
   StyledFooter, StyledFooterWrapper, Text, Link, Icon, TextLink,
 } from './Footer.styles';
 import translate from '../../portfolio';
-import Sprite from '../../../assets/icon-sprite.svg';
+import { CodepenIcon, DevToIcon, GithubIcon } from '../icons';
+
+const iconComponents = {
+  codepen: CodepenIcon,
+  'dev-dot-to': DevToIcon,
+  github: GithubIcon,
+};
 
 export function Footer() {
   return (
     <StyledFooter>
       <StyledFooterWrapper>
-        {translate.footer.map((item) => (
-          <Link
-            href={item.url}
-            key={item.id}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon
-              aria-labelledby="title"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="xMidYMid meet"
+        {translate.footer.map((item) => {
+          const SocialIcon = iconComponents[item.id as keyof typeof iconComponents];
+
+          return (
+            <Link
+              href={item.url}
+              key={item.id}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <title>{item.id}</title>
-              <use href={`${Sprite}#${item.id}`} />
-            </Icon>
-          </Link>
-        ))}
+              <Icon>
+                <SocialIcon title={item.id} />
+              </Icon>
+            </Link>
+          );
+        })}
       </StyledFooterWrapper>
       <Text>
         2018 - {new Date().getFullYear()}

@@ -1,20 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Sprite from '../../assets/icon-sprite.svg';
-import { Icon, MenuWrapper } from './Menu.styles';
+import { Link } from 'react-router';
+import { IconWrapper, MenuWrapper } from './Menu.styles';
+import { SnowflakeIcon } from '../Utils/icons';
 
 export function Menu() {
   return (
     <MenuWrapper>
       <Link to="/">
-        <Icon
-          aria-labelledby="title"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="xMidYMid meet"
-        >
-          <title>Yuki Cheung&apos;s Portfolio</title>
-          <use href={`${Sprite}#snowflake1`} />
-        </Icon>
+        <IconWrapper>
+          <SnowflakeIcon title="Yuki Cheung's Portfolio" />
+        </IconWrapper>
       </Link>
     </MenuWrapper>
   );

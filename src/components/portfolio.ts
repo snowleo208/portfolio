@@ -1,39 +1,39 @@
-import ryugakuFair1 from '../assets/projects/gallery/xl/ryugaku-fair_1.jpg';
-import ryugakuFair2 from '../assets/projects/gallery/xl/ryugaku-fair_2.jpg';
-import ryugakuFair3 from '../assets/projects/gallery/xl/ryugaku-fair_3.jpg';
-import ryugakuFair4 from '../assets/projects/gallery/xl/ryugaku-fair_4.jpg';
-import ryugakuFairBG from '../assets/projects/bg/ryugaku-fair.jpg';
+const ryugakuFair1 = new URL('../assets/projects/gallery/xl/ryugaku-fair_1.jpg', import.meta.url).toString();
+const ryugakuFair2 = new URL('../assets/projects/gallery/xl/ryugaku-fair_2.jpg', import.meta.url).toString();
+const ryugakuFair3 = new URL('../assets/projects/gallery/xl/ryugaku-fair_3.jpg', import.meta.url).toString();
+const ryugakuFair4 = new URL('../assets/projects/gallery/xl/ryugaku-fair_4.jpg', import.meta.url).toString();
+const ryugakuFairBG = new URL('../assets/projects/bg/ryugaku-fair.jpg', import.meta.url).toString();
 
-import uniquizBG from '../assets/projects/bg/uniquiz.jpg';
-import uniquiz1 from '../assets/projects/gallery/xl/uniquiz_1.jpg';
-import uniquiz2 from '../assets/projects/gallery/xl/uniquiz_2.jpg';
-import uniquiz3 from '../assets/projects/gallery/xl/uniquiz_3.jpg';
-import uniquiz4 from '../assets/projects/gallery/xl/uniquiz_4.jpg';
+const uniquizBG = new URL('../assets/projects/bg/uniquiz.jpg', import.meta.url).toString();
+const uniquiz1 = new URL('../assets/projects/gallery/xl/uniquiz_1.jpg', import.meta.url).toString();
+const uniquiz2 = new URL('../assets/projects/gallery/xl/uniquiz_2.jpg', import.meta.url).toString();
+const uniquiz3 = new URL('../assets/projects/gallery/xl/uniquiz_3.jpg', import.meta.url).toString();
+const uniquiz4 = new URL('../assets/projects/gallery/xl/uniquiz_4.jpg', import.meta.url).toString();
 
-import weLoveLanguagesBG from '../assets/projects/bg/we-love-languages.jpg';
-import weLoveLanguages1 from '../assets/projects/gallery/xl/we-love-languages_1.jpg';
-import weLoveLanguages2 from '../assets/projects/gallery/xl/we-love-languages_2.jpg';
-import weLoveLanguages3 from '../assets/projects/gallery/xl/we-love-languages_3.jpg';
-import weLoveLanguages4 from '../assets/projects/gallery/xl/we-love-languages_4.jpg';
+const weLoveLanguagesBG = new URL('../assets/projects/bg/we-love-languages.jpg', import.meta.url).toString();
+const weLoveLanguages1 = new URL('../assets/projects/gallery/xl/we-love-languages_1.jpg', import.meta.url).toString();
+const weLoveLanguages2 = new URL('../assets/projects/gallery/xl/we-love-languages_2.jpg', import.meta.url).toString();
+const weLoveLanguages3 = new URL('../assets/projects/gallery/xl/we-love-languages_3.jpg', import.meta.url).toString();
+const weLoveLanguages4 = new URL('../assets/projects/gallery/xl/we-love-languages_4.jpg', import.meta.url).toString();
 
-import zooplaDashboardBg from '../assets/projects/bg/zoopla-dashboard.jpg';
-import zooplaDashboard1 from '../assets/projects/gallery/xl/zoopla-dashboard_1.jpg';
-import zooplaDashboard2 from '../assets/projects/gallery/xl/zoopla-dashboard_2.jpg';
-import zooplaDashboard3 from '../assets/projects/gallery/xl/zoopla-dashboard_3.jpg';
-import zooplaDashboard4 from '../assets/projects/gallery/xl/zoopla-dashboard_4.jpg';
+const zooplaDashboardBg = new URL('../assets/projects/bg/zoopla-dashboard.jpg', import.meta.url).toString();
+const zooplaDashboard1 = new URL('../assets/projects/gallery/xl/zoopla-dashboard_1.jpg', import.meta.url).toString();
+const zooplaDashboard2 = new URL('../assets/projects/gallery/xl/zoopla-dashboard_2.jpg', import.meta.url).toString();
+const zooplaDashboard3 = new URL('../assets/projects/gallery/xl/zoopla-dashboard_3.jpg', import.meta.url).toString();
+const zooplaDashboard4 = new URL('../assets/projects/gallery/xl/zoopla-dashboard_4.jpg', import.meta.url).toString();
 
-import zooplaMapsBg from '../assets/projects/bg/zoopla-maps.jpg';
-import zooplaMaps1 from '../assets/projects/gallery/xl/zoopla-maps_1.jpg';
-import zooplaMaps2 from '../assets/projects/gallery/xl/zoopla-maps_2.jpg';
+const zooplaMapsBg = new URL('../assets/projects/bg/zoopla-maps.jpg', import.meta.url).toString();
+const zooplaMaps1 = new URL('../assets/projects/gallery/xl/zoopla-maps_1.jpg', import.meta.url).toString();
+const zooplaMaps2 = new URL('../assets/projects/gallery/xl/zoopla-maps_2.jpg', import.meta.url).toString();
 
-import autocompleteBg from '../assets/projects/bg/autocomplete.jpg';
-import autocomplete1 from '../assets/projects/gallery/autocomplete_1.jpg';
-import autocomplete2 from '../assets/projects/gallery/autocomplete_2.jpg';
+const autocompleteBg = new URL('../assets/projects/bg/autocomplete.jpg', import.meta.url).toString();
+const autocomplete1 = new URL('../assets/projects/gallery/autocomplete_1.jpg', import.meta.url).toString();
+const autocomplete2 = new URL('../assets/projects/gallery/autocomplete_2.jpg', import.meta.url).toString();
 
-import zooplaMcp from '../assets/projects/bg/zoopla-mcp.jpg';
-import zooplaMcp1 from '../assets/projects/gallery/zoopla-mcp_1.jpg';
-import zooplaMcp2 from '../assets/projects/gallery/zoopla-mcp_2.jpg';
-import zooplaMcp3 from '../assets/projects/gallery/zoopla-mcp_3.jpg';
+const zooplaMcp = new URL('../assets/projects/bg/zoopla-mcp.jpg', import.meta.url).toString();
+const zooplaMcp1 = new URL('../assets/projects/gallery/zoopla-mcp_1.jpg', import.meta.url).toString();
+const zooplaMcp2 = new URL('../assets/projects/gallery/zoopla-mcp_2.jpg', import.meta.url).toString();
+const zooplaMcp3 = new URL('../assets/projects/gallery/zoopla-mcp_3.jpg', import.meta.url).toString();
 
 export default {
     "header": "Grow and Develop",
@@ -150,15 +150,15 @@ export default {
     "contactText": "Interested in working together or discussing a project? Get in touch and I’ll be happy to connect.",
     "footer": [
         {
-            "id": "github",
+            "id": "github" as const,
             "url": "https://github.com/snowleo208/"
         },
         {
-            "id": "codepen",
+            "id": "codepen" as const,
             "url": "https://codepen.io/snowleo208/"
         },
         {
-            "id": "dev-dot-to",
+            "id": "dev-dot-to" as const,
             "url": "https://dev.to/snowleo208/"
         }
     ]

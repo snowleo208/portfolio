@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 import translate from '../portfolio';
 import {
   TextLink, ProjectContainer, HeroImage, LinkWrapper, Text, ImageGallery, ThumbnailImage, Box, TextLinkWrapper, ButtonLink

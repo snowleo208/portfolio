@@ -2,31 +2,16 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import translate from '../portfolio';
 import {
-  AboutGrid, AboutImage, ImageWrapper, Text, Skill, IconContainer, Icon,
+  AboutGrid, AboutImage, ImageWrapper, Text, Skill,
 } from './About.styles';
 import { ButtonLink } from '../Utils/Header/Header.styles';
-import image from '../../assets/about_01_m.jpg';
-import Sprite from '../../assets/icon-sprite.svg';
+import { ProfileIcons } from './ProfileIcons';
+
+const image = new URL('../../assets/about_01_m.jpg', import.meta.url).toString();
 
 function About() {
   const category = Object.keys(translate.skills);
-  const profileIcons = translate.footer.map((item) => (
-    <a
-      href={item.url}
-      key={item.id}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <Icon
-        aria-labelledby="title"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="xMidYMid meet"
-      >
-        <title>{item.id}</title>
-        <use href={`${Sprite}#${item.id}`} />
-      </Icon>
-    </a>
-  ));
+
   const createList = (list: keyof typeof translate.skills) => {
     let html = '';
     translate.skills[list].map((item, idx) => {
@@ -47,7 +32,7 @@ function About() {
           <Text>{translate.aboutDesc}</Text>
           <Text>{translate.aboutDesc1}</Text>
 
-          <IconContainer>{profileIcons}</IconContainer>
+          <ProfileIcons links={translate.footer} />
 
           <div>
             <h2>Skills</h2>

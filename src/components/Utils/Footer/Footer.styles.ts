@@ -23,13 +23,16 @@ export const Link = styled('a', {
     marginRight: "1rem"
 });
 
-export const Icon = styled('svg', {
-    width: "1.2em",
-    height: "1.2em",
-    fill: "rgb(95, 95, 95)",
+export const Icon = styled('span', {
+    color: "rgb(95, 95, 95)",
+    display: "inline-flex",
     transition: "ease 400ms",
     "&:hover": {
-        fill: "rgb(23, 23, 23)"
+        color: "rgb(23, 23, 23)"
+    },
+    svg: {
+        width: "1.2em",
+        height: "1.2em",
     }
 });
 

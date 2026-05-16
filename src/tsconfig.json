@@ -2,13 +2,14 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "outDir": "dist",
-    "module": "commonjs",
-    "target": "es5",
+    "module": "ESNext",
+    "target": "ES2017",
     "lib": ["es6", "dom"],
     "sourceMap": true,
     "allowJs": true,
     "jsx": "react",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
+    "skipLibCheck": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
@@ -23,7 +24,5 @@
     "jest",
     "src/setupTests.ts"
   ],
-  "types": [
-    "typePatches"
-  ]
+  "types": ["typePatches"]
 }

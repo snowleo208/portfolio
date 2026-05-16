@@ -1,5 +1,5 @@
 import { styled } from '@stitches/react';
-import {Link} from 'react-router-dom';
+import {Link} from 'react-router';
 
 export const StyledHeader = styled('section', {
     position: "relative",
@@ -78,4 +78,3 @@ export const HeaderText = styled('p', {
     textShadow: "1px 1px 2px rgba(255,255,255,0.5)",
     paddingBottom: "1rem"
 });
-

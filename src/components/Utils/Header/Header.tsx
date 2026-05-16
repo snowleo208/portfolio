@@ -4,7 +4,8 @@ import {
 } from './Header.styles';
 import { Menu } from '../../Menu/Menu';
 import translate from '../../portfolio';
-import bgImage from '../../../assets/top.jpg';
+
+const bgImage = new URL('../../../assets/top.jpg', import.meta.url).toString();
 
 export function Header() {
   return (

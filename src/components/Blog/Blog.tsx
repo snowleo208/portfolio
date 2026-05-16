@@ -17,19 +17,17 @@ const Post = (post: Post) => {
   return (
     <a href={post.url} target="_blank" rel="noopener noreferrer">
       <PostComponent>
-        <a href={post.url} target="_blank" rel="noopener noreferrer">
-          <PostImage
-            src={post.cover_image}
-            alt=""
-            loading="lazy"
-          />
-        </a>
+        <PostImage
+          src={post.cover_image}
+          alt=""
+          loading="lazy"
+        />
         <PostTitleWrapper>
-            <PostTitle>{post.title}</PostTitle>
+          <PostTitle>{post.title}</PostTitle>
           <PostDate>{post.readable_publish_date}</PostDate>
         </PostTitleWrapper>
       </PostComponent>
-      </a>
+    </a>
   );
 }
 

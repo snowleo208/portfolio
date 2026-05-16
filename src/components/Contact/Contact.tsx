@@ -5,11 +5,17 @@ import {
   Container, ContactGrid, StyledForm, Label, TextInput, Button, TextArea, Error,
 } from './Contact.styles';
 
+type ContactFormValues = {
+  email: string;
+  name: string;
+  message: string;
+};
+
 export function Contact() {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm<ContactFormValues>();
   const [showThankyou, setShowThankYou] = useState(false);
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = (data: ContactFormValues) => {
     if (!data) {
       throw Error('Submit Error');
     }
