@@ -12,7 +12,11 @@ type ContactFormValues = {
 };
 
 export function Contact() {
-  const { register, handleSubmit, formState: { errors } } = useForm<ContactFormValues>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactFormValues>();
   const [showThankyou, setShowThankYou] = useState(false);
 
   const onSubmit = async (data: ContactFormValues) => {
@@ -88,8 +92,9 @@ export function Contact() {
           </label>
           <Button
             type="submit"
-            value="Submit"
+            value={isSubmitting ? 'Submitting...' : 'Submit'}
             name="submit"
+            disabled={isSubmitting}
           />
         </StyledForm>)}
         {showThankyou && (
@@ -97,7 +102,7 @@ export function Contact() {
             aria-hidden={showThankyou ? 'false' : 'true'}
             data-testid="contact-thank-you"
           >
-            <p>Thank you for your message! </p>
+            <p>Thank you for your message. I will reply soon after I receive it.</p>
           </div>
         )}
       </ContactGrid>
