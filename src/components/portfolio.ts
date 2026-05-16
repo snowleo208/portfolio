@@ -10,12 +10,6 @@ import uniquiz2 from '../assets/projects/gallery/xl/uniquiz_2.jpg';
 import uniquiz3 from '../assets/projects/gallery/xl/uniquiz_3.jpg';
 import uniquiz4 from '../assets/projects/gallery/xl/uniquiz_4.jpg';
 
-import internshipBG from '../assets/projects/bg/internship.jpg';
-import internship1 from '../assets/projects/gallery/xl/internship_1.jpg';
-import internship2 from '../assets/projects/gallery/xl/internship_2.jpg';
-import internship3 from '../assets/projects/gallery/xl/internship_3.jpg';
-import internship4 from '../assets/projects/gallery/xl/internship_4.jpg';
-
 import weLoveLanguagesBG from '../assets/projects/bg/we-love-languages.jpg';
 import weLoveLanguages1 from '../assets/projects/gallery/xl/we-love-languages_1.jpg';
 import weLoveLanguages2 from '../assets/projects/gallery/xl/we-love-languages_2.jpg';
@@ -31,6 +25,15 @@ import zooplaDashboard4 from '../assets/projects/gallery/xl/zoopla-dashboard_4.j
 import zooplaMapsBg from '../assets/projects/bg/zoopla-maps.jpg';
 import zooplaMaps1 from '../assets/projects/gallery/xl/zoopla-maps_1.jpg';
 import zooplaMaps2 from '../assets/projects/gallery/xl/zoopla-maps_2.jpg';
+
+import autocompleteBg from '../assets/projects/bg/autocomplete.jpg';
+import autocomplete1 from '../assets/projects/gallery/autocomplete_1.jpg';
+import autocomplete2 from '../assets/projects/gallery/autocomplete_2.jpg';
+
+import zooplaMcp from '../assets/projects/bg/zoopla-mcp.jpg';
+import zooplaMcp1 from '../assets/projects/gallery/zoopla-mcp_1.jpg';
+import zooplaMcp2 from '../assets/projects/gallery/zoopla-mcp_2.jpg';
+import zooplaMcp3 from '../assets/projects/gallery/zoopla-mcp_3.jpg';
 
 export default {
     "header": "Grow and Develop",
@@ -50,11 +53,38 @@ export default {
     "brandList": ["zoopla", "ef", "dbs"],
     "blogTitle": "Recent Articles",
     "projects": [
+
         {
-            "id": 1,
+            "id": 7,
+            "urlKey": "zoopla-chatgpt-apps",
+            "category": "Commercial",
+            "name": "Zoopla ChatGPT Apps",
+            "link": "https://chatgpt.com/apps/zoopla/asdk_app_694547c513008191a7b8f44c95fb14c3",
+            "desc": "This commercial project for Zoopla explored building a customer-facing ChatGPT app experience, combining a custom MCP server with a new interactive UI surface inside ChatGPT. I led the initial frontend architecture and took the UI foundation from 0 to 1 while the backend MCP server work was still in progress, creating enough structure, patterns, and reusable templates for the wider team to continue development independently.",
+            "techDesc": "Created the initial ChatGPT Apps UI template from scratch and contributed to the MCP server integration approach. Established the frontend architecture, component structure, data-flow assumptions, and development patterns needed to support iterative product work while backend capabilities were still being defined.",
+            "client": "Zoopla (London, United Kingdom)",
+            "date": "Feb 2026",
+            "bg": zooplaMcp,
+            "gallery": [zooplaMcp1, zooplaMcp2, zooplaMcp3]
+        },
+        {
+            "id": 6,
+            "urlKey": "autocomplete",
+            "category": "Commercial",
+            "name": "House Prices Address Autocompletion on Zoopla Mobile App",
+            "link": "https://www.zoopla.co.uk/",
+            "desc": "This commercial project for Zoopla introduced address autocompletion to the House Prices journey on the mobile app, enabling users to search across a dataset of 35 million UK addresses. The work covered the full discovery and delivery process, from analysing address-search behaviour and OpenSearch query strategies through to validating relevance improvements in a production-safe way. A key part of the project was finding the best possible query approach without risking regressions to the live experience.",
+            "techDesc": "Built the address autocomplete experience with OpenSearch and React Native, including query optimisation, relevance tuning, performance analysis, and production-safe experimentation. Integrated the final solution into the Zoopla mobile app while balancing search quality, latency, and operational risk across a large-scale UK address index.",
+            "client": "Zoopla (London, United Kingdom)",
+            "date": "Mar 2025",
+            "bg": autocompleteBg,
+            "gallery": [autocomplete1, autocomplete2]
+        },
+        {
+            "id": 5,
             "urlKey": "zoopla-maps",
             "category": "Commercial",
-            "name": "Self-hosted Static Maps Project",
+            "name": "In-house Static Maps Image Alternatives",
             "link": "https://www.zoopla.co.uk/",
             "desc": "This project aimed to reduce static map costs for Zoopla, transitioning from Google Static Maps to a self-hosted solution. The project is projected to save £30,000 per year, significantly reducing operational costs. Led the project from the discovery phase, evaluating multiple solutions and selecting the one best suited to the company’s needs. Collaborated closely with the infrastructure team and the Head of Engineering to ensure a smooth transition. Took the lead on the front-end implementation and coordinated with the infra team.",
             "techDesc": "Implemented a service using TileServer GL, Amazon ECS, Amazon CloudFront, and other cloud services.",
@@ -64,7 +94,7 @@ export default {
             "gallery": [zooplaMaps1, zooplaMaps2]
         },
         {
-            "id": 2,
+            "id": 4,
             "urlKey": "zoopla-account-dashboard",
             "category": "Commercial",
             "name": "My Zoopla – Account Page Revamp",
@@ -90,7 +120,7 @@ export default {
             "gallery": [ryugakuFair1, ryugakuFair2, ryugakuFair3, ryugakuFair4]
         },
         {
-            "id": 4,
+            "id": 2,
             "urlKey": "uniquiz",
             "category": "Commercial",
             "name": "Uniquiz - Quiz Template",
@@ -103,20 +133,7 @@ export default {
             "gallery": [uniquiz1, uniquiz2, uniquiz3, uniquiz4]
         },
         {
-            "id": 5,
-            "category": "Commercial",
-            "urlKey": "internship",
-            "name": "EF International Internship & Volunteer Programs Landing Page",
-            "link": "https://www.ef.com.hk/hub/asia/internship/",
-            "desc": "This is a landing page developed for EF Hong Kong, for introducing an internship programme to students and stakeholders like teachers and universities. Get data from backend API, with a different design for destinations in mobile and desktop version. ",
-            "techDesc": "The main technologies are HTML, CSS, Javascript",
-            "client": "EF Education First (Hong Kong)",
-            "date": "Feb, 2019",
-            "bg": internshipBG,
-            "gallery": [internship1, internship2, internship3, internship4]
-        },
-        {
-            "id": 6,
+            "id": 1,
             "category": "Commercial",
             "urlKey": "we-love-languages",
             "name": "Card Game - We Love Languages",
@@ -127,21 +144,22 @@ export default {
             "date": "November, 2018",
             "bg": weLoveLanguagesBG,
             "gallery": [weLoveLanguages1, weLoveLanguages2, weLoveLanguages3, weLoveLanguages4]
-        }
+        },
     ],
     "contactHeader": "Contact Me",
-    "contactText": "Interested in working together? Reach out and let me know how I can help!",
-    "footer": [{
-        "id": "github",
-        "url": "https://github.com/snowleo208"
-    },
-    {
-        "id": "codepen",
-        "url": "https://codepen.io/snowleo208/"
-    },
-    {
-        "id": "dev-dot-to",
-        "url": "https://dev.to/snowleo208/"
-    }
+    "contactText": "Interested in working together or discussing a project? Get in touch and I’ll be happy to connect.",
+    "footer": [
+        {
+            "id": "github",
+            "url": "https://github.com/snowleo208/"
+        },
+        {
+            "id": "codepen",
+            "url": "https://codepen.io/snowleo208/"
+        },
+        {
+            "id": "dev-dot-to",
+            "url": "https://dev.to/snowleo208/"
+        }
     ]
 }
