@@ -7,8 +7,8 @@ on:
       - main
 
 jobs:
-  test:
-    name: Typecheck and test
+  typecheck:
+    name: Typecheck
     runs-on: ubuntu-latest
 
     steps:
@@ -31,6 +31,28 @@ jobs:
 
       - name: Typecheck
         run: pnpm typecheck
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 10.6.1
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
       - name: Test
         run: pnpm test
