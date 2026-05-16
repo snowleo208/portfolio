@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "My portfolio of web development",
   "scripts": {
-    "start": "npm run dev",
+    "start": "pnpm run dev",
     "dev": "cross-env NODE_ENV=development parcel src/index.html --open",
     "lint": "eslint ./src/**/**.tsx",
     "precommit": "lint-staged",
