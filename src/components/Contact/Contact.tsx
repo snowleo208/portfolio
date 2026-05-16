@@ -15,24 +15,23 @@ export function Contact() {
   const { register, handleSubmit, formState: { errors } } = useForm<ContactFormValues>();
   const [showThankyou, setShowThankYou] = useState(false);
 
-  const onSubmit = (data: ContactFormValues) => {
+  const onSubmit = async (data: ContactFormValues) => {
     if (!data) {
       throw Error('Submit Error');
     }
 
-    return fetch('https://formspree.io/mzbkpjdj', {
+    const res = await fetch('https://formspree.io/mzbkpjdj', {
       method: 'POST',
       mode: 'cors',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
-    })
-      .then((res) => {
-        if (res.status === 200) {
-          setShowThankYou(true);
-        }
-      });
+    });
+
+    if (res.status === 200) {
+      setShowThankYou(true);
+    }
   };
 
   return (
@@ -53,9 +52,9 @@ export function Contact() {
             </Label>
             <TextInput id="email" {...register('email', { required: true })} />
             {errors?.email && (
-            <Error id="form-email-error">
-              Please enter a valid email format
-            </Error>
+              <Error id="form-email-error">
+                Please enter a valid email format
+              </Error>
             )}
           </label>
           <label htmlFor="name">
@@ -65,9 +64,9 @@ export function Contact() {
               {...register('name', { required: true, maxLength: 20 })}
             />
             {errors?.name && (
-            <Error id="form-name-error">
-              Please enter a valid name with alphabets only
-            </Error>
+              <Error id="form-name-error">
+                Please enter a valid name with alphabets only
+              </Error>
             )}
           </label>
           <label htmlFor="message">
@@ -80,11 +79,11 @@ export function Contact() {
               {...register('message', { required: true, maxLength: 400, minLength: 10 })}
             />
             {errors?.message && (
-            <Error
-              id="form-message-error"
-            >
-              Please enter at least 10 characters and less than 400 characters.
-            </Error>
+              <Error
+                id="form-message-error"
+              >
+                Please enter at least 10 characters and less than 400 characters.
+              </Error>
             )}
           </label>
           <Button
@@ -94,12 +93,12 @@ export function Contact() {
           />
         </StyledForm>)}
         {showThankyou && (
-        <div
-          aria-hidden={showThankyou ? 'false' : 'true'}
-          data-testid="contact-thank-you"
-        >
-          <p>Thank you for your message! </p>
-        </div>
+          <div
+            aria-hidden={showThankyou ? 'false' : 'true'}
+            data-testid="contact-thank-you"
+          >
+            <p>Thank you for your message! </p>
+          </div>
         )}
       </ContactGrid>
     </Container>

@@ -40,18 +40,28 @@ export const Blog = () => {
     };
   }, []);
 
+  if (hasError) {
+    return (
+      <BlogGrid>
+        <BlogHeader>{translate.blogTitle}</BlogHeader>
+        <BlogError role="alert">Unable to load recent articles.</BlogError>
+      </BlogGrid>
+    )
+  }
+
   return (
     <BlogGrid>
       <BlogHeader>{translate.blogTitle}</BlogHeader>
-      {hasError ? (
-        <BlogError role="alert">Unable to load recent articles.</BlogError>
-      ) : (
-        <BlogPost>
-          {post.slice(0, 3).map((post) => (
-            <Post key={post.url} {...post} />
-          ))}
-        </BlogPost>
-      )}
+      <BlogPost>
+        {post.slice(0, 3).map((post) => (
+          <Post key={post.url} {...post} />
+        ))}
+      </BlogPost>
+
+      <div aria-live='polite'>
+        {hasError &&
+          <BlogError role="alert">Unable to load recent articles.</BlogError>}
+      </div>
     </BlogGrid>
   );
 }
