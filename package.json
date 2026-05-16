@@ -7,6 +7,7 @@
     "dev": "cross-env NODE_ENV=development parcel src/index.html --open",
     "lint": "eslint ./src/**/**.tsx",
     "precommit": "lint-staged",
+    "test": "vitest run",
     "build": "cross-env NODE_ENV=production parcel build src/index.html --no-cache"
   },
   "lint-staged": {
@@ -28,6 +29,7 @@
   "devDependencies": {
     "@babel/core": "7.29.0",
     "@babel/eslint-parser": "7.28.6",
+    "@testing-library/react": "16.3.2",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "@types/react-helmet": "6.1.11",
@@ -39,10 +41,12 @@
     "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "7.1.1",
+    "jsdom": "29.1.1",
     "lint-staged": "17.0.4",
     "parcel": "2.16.4",
     "prettier": "3.8.3",
     "process": "0.11.10",
-    "typescript": "6.0.3"
+    "typescript": "6.0.3",
+    "vitest": "4.1.6"
   }
 }
