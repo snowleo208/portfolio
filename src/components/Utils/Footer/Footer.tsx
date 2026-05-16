@@ -20,6 +20,7 @@ export function Footer() {
 
           return (
             <Link
+              aria-label={item.id}
               href={item.url}
               key={item.id}
               target="_blank"

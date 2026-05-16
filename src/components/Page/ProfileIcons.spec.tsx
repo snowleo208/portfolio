@@ -30,6 +30,6 @@ describe('ProfileIcons', () => {
   it('skips unsupported profile links', () => {
     render(<ProfileIcons links={[{ id: 'mastodon', url: 'https://mastodon.social/@snowleo208' }]} />);
 
-    expect(screen.queryByRole('link', { name: 'mastodon' })).toBeNull();
+    expect(screen.queryByRole('link')).toBeNull();
   });
 });

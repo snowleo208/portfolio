@@ -12,6 +12,14 @@ export function ProjectDetails() {
     (item) => item.urlKey === url,
   );
 
+  if (project.length !== 1) {
+    return (
+      <ProjectContainer>
+        No project
+      </ProjectContainer>
+    );
+  }
+
   const projectItem = project.map((ele) => (
     <section key={ele.urlKey}>
       <Helmet>

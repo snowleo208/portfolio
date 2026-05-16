@@ -29,6 +29,7 @@
   "devDependencies": {
     "@babel/core": "7.29.0",
     "@babel/eslint-parser": "7.28.6",
+    "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.2",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
@@ -43,6 +44,7 @@
     "eslint-plugin-react-hooks": "7.1.1",
     "jsdom": "29.1.1",
     "lint-staged": "17.0.4",
+    "msw": "2.14.6",
     "parcel": "2.16.4",
     "prettier": "3.8.3",
     "process": "0.11.10",

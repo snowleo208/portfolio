@@ -51,7 +51,7 @@ export function Contact() {
             <Label>
               Email
             </Label>
-            <TextInput {...register('email', { required: true })} />
+            <TextInput id="email" {...register('email', { required: true })} />
             {errors?.email && (
             <Error id="form-email-error">
               Please enter a valid email format
@@ -61,6 +61,7 @@ export function Contact() {
           <label htmlFor="name">
             <Label>Name</Label>
             <TextInput
+              id="name"
               {...register('name', { required: true, maxLength: 20 })}
             />
             {errors?.name && (
@@ -74,7 +75,7 @@ export function Contact() {
               Message
             </Label>
             <TextArea
-              id="form-message"
+              id="message"
               rows={4}
               {...register('message', { required: true, maxLength: 400, minLength: 10 })}
             />

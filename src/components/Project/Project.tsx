@@ -14,7 +14,7 @@ export function Project() {
       }}
       key={item?.urlKey}
     >
-      <Link to={`/project/${item.urlKey}`}>
+      <Link to={`/project/${item.urlKey}/`}>
         <ProjectOverlay>
           <h2>{item.name}</h2>
           <p>{item.category}</p>
