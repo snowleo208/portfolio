@@ -17,7 +17,12 @@ export function Logo() {
     <LogoGrid>
       <LogoContainer>
         {translate.brandList.map((item) => (
-          <StyledLogo loading="lazy" src={imageList[item]} key={`${item}-logo`} />
+          <StyledLogo
+            alt={`${item} logo`}
+            loading="lazy"
+            src={imageList[item]}
+            key={`${item}-logo`}
+          />
         ))}
       </LogoContainer>
     </LogoGrid>

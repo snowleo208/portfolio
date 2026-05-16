@@ -24,6 +24,11 @@ export const BlogPost = styled('div', {
     }
 });
 
+export const BlogError = styled('p', {
+    margin: 0,
+    color: 'rgb(95, 95, 95)',
+});
+
 export const PostComponent = styled('div', {
     backgroundColor: "white",
     width: "100%",
@@ -69,4 +74,3 @@ export const PostDate = styled('p', {
     fontSize: "0.7rem",
     fontWeight: "bold"
 });
-

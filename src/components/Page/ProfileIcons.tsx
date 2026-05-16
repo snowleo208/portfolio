@@ -32,6 +32,7 @@ export const ProfileIcons = ({ links }: ProfileIconsProps) => (
 
       return (
         <a
+          aria-label={item.id}
           href={item.url}
           key={item.id}
           target="_blank"
