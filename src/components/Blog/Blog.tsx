@@ -1,38 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import translate from '../portfolio';
 import {
-  BlogHeader, BlogGrid, BlogPost, PostComponent, PostImage, PostTitle, PostTitleWrapper, PostDate,
+  BlogHeader, BlogGrid, BlogPost,
 } from './Blog.styles';
-
-type Post = {
-  title: string;
-  description: string;
-  readable_publish_date: string;
-  url: string;
-  cover_image: string;
-  created_at: string;
-}
-
-const Post = (post: Post) => {
-  return (
-    <a href={post.url} target="_blank" rel="noopener noreferrer">
-      <PostComponent>
-        <PostImage
-          src={post.cover_image}
-          alt=""
-          loading="lazy"
-        />
-        <PostTitleWrapper>
-          <PostTitle>{post.title}</PostTitle>
-          <PostDate>{post.readable_publish_date}</PostDate>
-        </PostTitleWrapper>
-      </PostComponent>
-    </a>
-  );
-}
+import { Post, type PostProps } from './Post';
 
 export const Blog = () => {
-  const [post, setPost] = useState<Post[]>([]);
+  const [post, setPost] = useState<PostProps[]>([]);
   const fetchRss = () => fetch('https://blog.atrera.com/latest.json', {
     mode: 'cors',
   }).then((res) => res.json()).then((posts) => setPost(posts));
