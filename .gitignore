@@ -2,6 +2,3 @@ node_modules/
 dist/
 env.json
 .parcel-cache
-.*
-!.github/
-!.github/**
